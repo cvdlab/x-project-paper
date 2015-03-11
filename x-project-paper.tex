@@ -39,7 +39,7 @@
 % without further effort on your part as the last section in
 % the body of your article BEFORE References or any Appendices.
 
-\numberofauthors{8} %  in this sample file, there are a *total*
+\numberofauthors{4} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
@@ -56,45 +56,37 @@
 %
 % 1st. author
 \alignauthor
-Ben Trovato\titlenote{Dr.~Trovato insisted his name be first.}\\
-       \affaddr{Institute for Clarity in Documentation}\\
-       \affaddr{1932 Wallamaloo Lane}\\
-       \affaddr{Wallamaloo, New Zealand}\\
-       \email{trovato@corporation.com}
+Andrea D'Amelio\\
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Dipartimento di Ingegneria}\\
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Rome, Italy}\\
+  \email{damelio@dia.uniroma3.it}
 % 2nd. author
 \alignauthor
-G.K.M. Tobin\titlenote{The secretary disavows
-any knowledge of this author's actions.}\\
-       \affaddr{Institute for Clarity in Documentation}\\
-       \affaddr{P.O. Box 1212}\\
-       \affaddr{Dublin, Ohio 43017-6221}\\
-       \email{webmaster@marysville-ohio.com}
+Enrico Marino\\
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Dipartimento di Ingegneria}\\
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Rome, Italy}\\
+  \email{marino@dia.uniroma3.it}
+\and
 % 3rd. author
-\alignauthor Lars Th{\o}rv{\"a}ld\titlenote{This author is the
-one who did all the really hard work.}\\
-       \affaddr{The Th{\o}rv{\"a}ld Group}\\
-       \affaddr{1 Th{\o}rv{\"a}ld Circle}\\
-       \affaddr{Hekla, Iceland}\\
-       \email{larst@affiliation.org}
-\and  % use '\and' if you need 'another row' of author names
+\alignauthor
+Tiziano Sperati\\
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Dipartimento di Ingegneria}\\
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Rome, Italy}\\
+  \email{sperati@dia.uniroma3.it}
 % 4th. author
-\alignauthor Lawrence P. Leipuner\\
-       \affaddr{Brookhaven Laboratories}\\
-       \affaddr{Brookhaven National Lab}\\
-       \affaddr{P.O. Box 5000}\\
-       \email{lleipuner@researchlabs.org}
-% 5th. author
-\alignauthor Sean Fogarty\\
-       \affaddr{NASA Ames Research Center}\\
-       \affaddr{Moffett Field}\\
-       \affaddr{California 94035}\\
-       \email{fogartys@amesres.org}
-% 6th. author
-\alignauthor Charles Palmer\\
-       \affaddr{Palmer Research Laboratories}\\
-       \affaddr{8600 Datapoint Drive}\\
-       \affaddr{San Antonio, Texas 78229}\\
-       \email{cpalmer@prl.com}
+\alignauthor
+Federico Spini\\
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Dipartimento di Ingegneria}\\
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Rome, Italy}\\
+  \email{spini@dia.uniroma3.it}
 }
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
@@ -151,13 +143,13 @@ Regarding to numerous open source web frameworks, it becomes so difficult for de
 
 \section{State of the art}
 
-Web  è una collezione di standard all’avanguardia che ci fornisce la possibilità di creare widget, è totalmente riusabile e non interferisce con il funzionamento della pagina in caso di cambiamento dell’implementazione interna del componente.
-Nello sviluppo di un widget è importante utilizzare abilmente Javascript e HTML per la visualizzazione dinamica dei contenuti e gli standard di Web Components sono orientati verso ciò. L’unico, fondamentale, problema relativo allo sviluppo di Web Components è dettato dal DOM. Il DOM interno a un widget non è incapsulato dal resto della pagina. Questa mancanza potrebbe portare a problemi di sovrascritture da parte della pagina su elementi all’interno del widget.
+Web  è una collezione di standard all'avanguardia che ci fornisce la possibilità di creare widget, è totalmente riusabile e non interferisce con il funzionamento della pagina in caso di cambiamento dell'implementazione interna del componente.
+Nello sviluppo di un widget è importante utilizzare abilmente Javascript e HTML per la visualizzazione dinamica dei contenuti e gli standard di Web Components sono orientati verso ciò. L'unico, fondamentale, problema relativo allo sviluppo di Web Components è dettato dal DOM. Il DOM interno a un widget non è incapsulato dal resto della pagina. Questa mancanza potrebbe portare a problemi di sovrascritture da parte della pagina su elementi all'interno del widget.
 Open-source software (OSS) is computer software with its source code made available with a license in which the copyright holder provides the rights to study, change and distribute the software to anyone and for any purpose.[21] Open-source software is developed in a collaborative public manner. Open-source software is the most prominent example of open-source development and often compared to (technically defined) user-generated content or (legally defined) open-content movements.[22]
 
 \subsection{Web Application and CMS platforms}
 
-One universal definition of Content Management System is: "A system that lets you apply management principles to content"[4].
+One universal definition of Content Management System is: ``A system that lets you apply management principles to content''[4].
 WordPress is a free and open-source CMS based on PHP and MySQL. Features include a plugin architecture and a template system [5]. WordPress was used by more than 23.3% of the top 10 million websites as of January 2015 [6]. WordPress is the most popular blogging system in use on the Web, at more than 60 million websites [7, 8].
 Keystone.js is a Node.js CMS and Web Application Platform. It is an open source framework for developing database-driven websites, applications and APIs in Node.js. It is built on Express and MongoDB [9].
 The LoopBack framework is a set of Node.js modules that you can use independently or together.  
@@ -167,7 +159,7 @@ The following diagram illustrates key LoopBack modules, how they are related, an
 
 \subsection{Single Page Applications}
 
-A single-page application (SPA), is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience akin to a desktop application. In an SPA, either all necessary code – HTML, JavaScript, and CSS – is retrieved with a single page load, or the appropriate resources are dynamically loaded and added to the page as necessary, usually in response to user actions. The page does not reload at any point in the process, nor does control transfer to another page, although modern web technologies (such as those included in the HTML5 pushState() API) can provide the perception and navigability of separate logical pages in the application. Interaction with the single page application often involves dynamic communication with the web server behind the scenes.
+A single-page application (SPA), is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience akin to a desktop application. In an SPA, either all necessary code - HTML, JavaScript, and CSS - is retrieved with a single page load, or the appropriate resources are dynamically loaded and added to the page as necessary, usually in response to user actions. The page does not reload at any point in the process, nor does control transfer to another page, although modern web technologies (such as those included in the HTML5 pushState() API) can provide the perception and navigability of separate logical pages in the application. Interaction with the single page application often involves dynamic communication with the web server behind the scenes.
 
 \section{Next generation technologies and frameworks}
 
@@ -176,10 +168,11 @@ A single-page application (SPA), is a web application or web site that fits on a
 Web Components are a collection of standards which are working their way through the W3C and landing in browsers as we speak. In a nutshell, they allow us to bundle markup and styles into custom HTML elements. What's truly amazing about these new elements is that they fully encapsulate all of their HTML and CSS. That means the styles that you write always render as you intended, and your HTML is safe from the prying eyes of external JavaScript. [11]
 
 \begin{description}
-       \item[Custom Elements] This specification describes the method for enabling the author to define and use new types of DOM elements in a document.
-       \item[HTML Imports] HTML Imports are a way to include and reuse HTML documents in other HTML documents.
-       \item[Templates] This specification describes a method for declaring inert DOM subtrees in HTML and manipulating them to instantiate document fragments with identical contents.
-       \item[Shadow DOM] This specification describes a method of establishing and maintaining functional boundaries between DOM trees and how these trees interact with each other within a document, thus enabling better functional encapsulation within the DOM.
+\itemsep1pt\parskip0pt\parsep0pt
+  \item[Custom Elements] This specification describes the method for enabling the author to define and use new types of DOM elements in a document.
+  \item[HTML Imports] HTML Imports are a way to include and reuse HTML documents in other HTML documents.
+  \item[Templates] This specification describes a method for declaring inert DOM subtrees in HTML and manipulating them to instantiate document fragments with identical contents.
+  \item[Shadow DOM] This specification describes a method of establishing and maintaining functional boundaries between DOM trees and how these trees interact with each other within a document, thus enabling better functional encapsulation within the DOM.
 \end{description}
 
 \subsection{Web Components Frameworks}
@@ -187,9 +180,9 @@ Web Components are a collection of standards which are working their way through
 Web Components usher in a new era of web development based on encapsulated and interoperable custom elements that extend HTML itself.
 There are three major frameworks built atop these new standards: Polymer, X-Tag and Bosonic.
 Moreover there are some Web Application Frameworks that are moving their philosophy towards Web Components such as AngularJS [101, 200, 201] and EmberJS [102].
-Polymer makes it easier and faster to create elements, from a button to a complete application across desktop, mobile, and beyond. The Polymer core provides a thin layer of API on top of web components. It expresses Polymer’s opinion, provides the extra sugaring that all Polymer elements use, and is meant to help make developing web components much easier [103].
+Polymer makes it easier and faster to create elements, from a button to a complete application across desktop, mobile, and beyond. The Polymer core provides a thin layer of API on top of web components. It expresses Polymer's opinion, provides the extra sugaring that all Polymer elements use, and is meant to help make developing web components much easier [103].
 X-Tag allows to easily create elements to encapsulate common behavior or use existing custom elements to quickly get the behavior desired. X-Tag provides several powerful features that streamline element creation such as: custom events and delegation, mixins, accessors and component lifecycle functions [104].
-Bosonic is a set of tools that enable the built and use reusable Web Components. By leveraging the power of DOM to build high-level elements, it allows to simplify application’s code and benefits from 3rd-party elements [105].
+Bosonic is a set of tools that enable the built and use reusable Web Components. By leveraging the power of DOM to build high-level elements, it allows to simplify application's code and benefits from 3rd-party elements [105].
 
 \subsection{WebComponents libraries}
 
@@ -197,22 +190,22 @@ Bosonic is a set of tools that enable the built and use reusable Web Components.
 
 \section{Contribution}
 
-The real contribution of the work presented in this paper is…
+The real contribution of the work presented in this paper is...
 la realizzazione di un API-centric CMS/SPA Application framework Web Components based.API-centrico basato su API builder strongloop loopback vantaggi immediati, separazione degli interessi, 
 
 \section{X-Project}
 
-X-Project is…
+X-Project is...
 
 \subsection{Philosophy}
 
-“Everything is an element”, even a page. 
-ogni parte del sito è incapsulata in un elemento, anche componenti funzionali come servizi http (chiamate ajax) possono essere incapsulate in un elemento…
+"Everything is an element", even a page. 
+ogni parte del sito è incapsulata in un elemento, anche componenti funzionali come servizi http (chiamate ajax) possono essere incapsulate in un elemento...
 
 \subsubsection{Components}
 
 da Web services and web components
-Component-based Software Engineering denotes the process of building software by (re)using pre-built software components. The main benefit of component-based software is the “time-to-market” [12], thus reducing the cost of developing the software. A software component is a unit of composition with contractually specified interfaces and explicit context dependencies. Additionally, a component is a software element that conforms to a component model and can be independently deployed and composed [13]. Component based software is developed interconnecting building blocks, therefore, a high degree of reusability and modularity is achieved by this type of applications [14].
+Component-based Software Engineering denotes the process of building software by (re)using pre-built software components. The main benefit of component-based software is the "time-to-market" [12], thus reducing the cost of developing the software. A software component is a unit of composition with contractually specified interfaces and explicit context dependencies. Additionally, a component is a software element that conforms to a component model and can be independently deployed and composed [13]. Component based software is developed interconnecting building blocks, therefore, a high degree of reusability and modularity is achieved by this type of applications [14].
 
 \subsection{Architecture}
 
@@ -221,18 +214,21 @@ Client/Server API-centric architecture for Single Page Applications.
 \subsubsection{Server-side}
 
 \begin{description}
-       \item[Node.js web framework] Node.js è un framework event-driven per il motore JavaScript V8, su piattaforme UNIX like. Si tratta quindi di un framework relativo all'utilizzo server-side di Javascript.
-       \item[MongDB]
-       MongoDB è un database non relazionale, orientato ai documenti. Classificato come un database di tipo NoSQL, MongoDB si allontana dalla struttura tradizionale basata su tabelle dei database relazionali in favore di documenti in stile JSON con schema dinamico (MongoDB chiama il formato BSON), rendendo l'integrazione di dati di alcuni tipi di applicazioni più facile e veloce.
-       \item[NoSQL]
-       NoSQL (often interpreted as Not only SQL[1][2]) database provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases. Motivations for this approach include simplicity of design, horizontal scaling, and finer control over availability. The data structures used by NoSQL databases (e.g. key-value, graph, or document) differ from those used in relational databases, making some operations faster in NoSQL and others faster in relational databases. The particular suitability of a given NoSQL database depends on the problem it must solve. 
-       \item[Strongloop]
-       StrongLoop offers a subscription-based product known as StrongLoop Suite. StrongLoop Suite includes three components: an open source private mobile Backend-as-a-Service mBaaS named LoopBack; a second component called StrongOps, which provides operations and real-time performance monitoring in a console; and a supported package of Node.js called StrongNode, containing advanced debugging, clustering and support for private npm registries.
+\itemsep1pt\parskip0pt\parsep0pt
+  \item[Node.js web framework] 
+    Node.js è un framework event-driven per il motore JavaScript V8, su piattaforme UNIX like. Si tratta quindi di un framework relativo all'utilizzo server-side di Javascript.
+  \item[MongDB]
+    MongoDB è un database non relazionale, orientato ai documenti. Classificato come un database di tipo NoSQL, MongoDB si allontana dalla struttura tradizionale basata su tabelle dei database relazionali in favore di documenti in stile JSON con schema dinamico (MongoDB chiama il formato BSON), rendendo l'integrazione di dati di alcuni tipi di applicazioni più facile e veloce.
+\item[NoSQL]
+    NoSQL (often interpreted as Not only SQL[1][2]) database provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases. Motivations for this approach include simplicity of design, horizontal scaling, and finer control over availability. The data structures used by NoSQL databases (e.g. key-value, graph, or document) differ from those used in relational databases, making some operations faster in NoSQL and others faster in relational databases. The particular suitability of a given NoSQL database depends on the problem it must solve. 
+  \item[Strongloop]
+    StrongLoop offers a subscription-based product known as StrongLoop Suite. StrongLoop Suite includes three components: an open source private mobile Backend-as-a-Service mBaaS named LoopBack; a second component called StrongOps, which provides operations and real-time performance monitoring in a console; and a supported package of Node.js called StrongNode, containing advanced debugging, clustering and support for private npm registries.
 \end{description}
 
 \subsubsection{Client-side}
 
 \begin{description}
+\itemsep1pt\parskip0pt\parsep0pt
        \item[Polymer.js]
        \item[Web Components] 
 \end{description}
@@ -251,6 +247,7 @@ possiamo classificare gli elementi in  strutturali, applicativi, form, di stile.
 elementi strutturali compongono la pagina
 
 \begin{description}
+\itemsep1pt\parskip0pt\parsep0pt
        \item[x-header], barra di navigazione
        \item[x-footer], per le informazioni a piè di pagina come autore, copyright, madeby, social buttons
        \item[x-drawer], struttura per menu laterale a scomparsa
@@ -265,13 +262,15 @@ elementi strutturali compongono la pagina
 \subsubsection{Routing elements}
 
 \begin{description}
-      \item[x-link], estensione dell’elemento anchor ({\tt <a>}) per evitare il comportamento di default e richidere la pagina al server, ma gestire il routing localmente 
+\itemsep1pt\parskip0pt\parsep0pt
+      \item[x-link], estensione dell'elemento anchor ({\tt <a>}) per evitare il comportamento di default e richidere la pagina al server, ma gestire il routing localmente 
 \end{description}
 
 
 \subsubsection{Form elements}
 
 \begin{description}
+\itemsep1pt\parskip0pt\parsep0pt
        \item[x-map] (google maps)
        \item[x-location] (google place API wrapper)
        \item[x-contact] (form di elementi di input aggregati per le informazioni di un contatto)
@@ -282,12 +281,14 @@ elementi strutturali compongono la pagina
 \subsubsection{Input elements}
 
 \begin{description}
+\itemsep1pt\parskip0pt\parsep0pt
        \item[x-input, x-textarea, x-number, x-date, x-datetime] elementi rispettivamente per testo breve, testo lungo, numeri, date, date e orario
 \end{description}
 
 \subsubsection{Style elements}
 
 \begin{description}        
+\itemsep1pt\parskip0pt\parsep0pt
        \item[x-bootstrap] e la libreria bootstrap adattata
 per stilizzare elementi dello shadow dom nota su stilizzare gli elementi. lo
 stile di un elemento si può mettere inline 
@@ -295,7 +296,7 @@ stile di un elemento si può mettere inline
 
  
 
-ma si possono anche stilizzare elementi dall’esterno, accedendo tramite i selettori CSS allo shadow dom, usando /deep/
+ma si possono anche stilizzare elementi dall'esterno, accedendo tramite i selettori CSS allo shadow dom, usando /deep/
 
 link a github 
 
@@ -306,11 +307,12 @@ To speed up web application development, action based frameworks mostly rely on 
 avviene tramite JSON
 
 
-CMS definito tramite modelli. Un modello è definito da un json, estensione dei models di loopback. Il generatore di API di loopback usa questi modelli. Hanno un campo type. Nell’estensione, per non entrare in conflitto con loopback, viene aggiunto un campo {\tt \$type}.
+CMS definito tramite modelli. Un modello è definito da un json, estensione dei models di loopback. Il generatore di API di loopback usa questi modelli. Hanno un campo type. Nell'estensione, per non entrare in conflitto con loopback, viene aggiunto un campo {\tt \$type}.
 A ogni tipo di dato è associato un campo di input corrispondente. 
 Tali type sono: 
 
 \begin{itemize}
+\itemsep1pt\parskip0pt\parsep0pt
        \item number: x-number
        \item string: x-input,
        \item select: x-select,
@@ -344,14 +346,14 @@ Admin Management, Data Management, User Management, UI Management, Web Content M
 \subsection{Security}
 
 Third-party code inclusion is rampant, potentially exposing sensitive data to attackers. Protected Web components can keep private data safe from opportunistic attacks by hiding static data in the Document Object Model (DOM) and isolating sensitive interactive elements within a Web component.
-The Web has evolved from including static images and document links to comprising Web applications with individual components provided by numerous service providers. When a Web application incorporates third-party components using remote scripts, the user’s browser will run the third-party code within the security context of the Web application. This not only exposes the code’s functionality to the Web application but also gives the included code full access to the Web application’s client-side context, including the page’s content, local data, and origin-protected functionality. 
-This lack of code isolation can have severe consequences if the included code doesn’t behave correctly.
+The Web has evolved from including static images and document links to comprising Web applications with individual components provided by numerous service providers. When a Web application incorporates third-party components using remote scripts, the user's browser will run the third-party code within the security context of the Web application. This not only exposes the code's functionality to the Web application but also gives the included code full access to the Web application's client-side context, including the page's content, local data, and origin-protected functionality. 
+This lack of code isolation can have severe consequences if the included code doesn't behave correctly.
 
-Consequently, by including potentially untrusted remote scripts, a Web application developer accepts a certain risk, both for the site’s integrity and for the safekeeping of user data [16].
+Consequently, by including potentially untrusted remote scripts, a Web application developer accepts a certain risk, both for the site's integrity and for the safekeeping of user data [16].
 
 Web components are the most viable starting point for creating a protection mechanism for private data and sensitive elements against opportunistic attackers. They offer the required flexibility to cope with the highly dynamic requirements of modern Web applications, as opposed to iframes, and already possess the capability to host a separate DOM tree using the shadow DOM, a property that is hard to achieve using JavaScript sandboxing technologies [17].
 
-To leverage Web components to create protected Web components, we must be able to hide static data in the DOM tree, without it being accessible to opportunistic attackers. Second, protected Web components should be able to host interactive elements, without being vulnerable to script-based compromises—for example, through function-overriding or prototype-poisoning attacks [18].
+To leverage Web components to create protected Web components, we must be able to hide static data in the DOM tree, without it being accessible to opportunistic attackers. Second, protected Web components should be able to host interactive elements, without being vulnerable to script-based compromises-for example, through function-overriding or prototype-poisoning attacks [18].
 
 
 \section{Future development}

@@ -8,7 +8,7 @@
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
 
-\title{x-project: next-generation API-centric HTML5 Web Components based Web Application and CMS framework}
+\title{X-Project: next-generation API-centric HTML5 Web Components based Web Application and CMS framework}
 
 % \titlenote{A full version of this paper is available as
 % \emph{Author's Guide to Preparing ACM SIG Proceedings Using
@@ -57,36 +57,36 @@
 % 1st. author
 \alignauthor
 Andrea D'Amelio\\
-  \affaddr{Universit\`a Roma Tre}\\
-  \affaddr{Dipartimento di Ingegneria}\\
-  \affaddr{Universit\`a Roma Tre}\\
-  \affaddr{Rome, Italy}\\
-  \email{damelio@dia.uniroma3.it}
+	\affaddr{Universit\`a Roma Tre}\\
+	\affaddr{Dipartimento di Ingegneria}\\
+	\affaddr{Universit\`a Roma Tre}\\
+	\affaddr{Rome, Italy}\\
+	\email{damelio@dia.uniroma3.it}
 % 2nd. author
 \alignauthor
 Enrico Marino\\
-  \affaddr{Universit\`a Roma Tre}\\
-  \affaddr{Dipartimento di Ingegneria}\\
-  \affaddr{Universit\`a Roma Tre}\\
-  \affaddr{Rome, Italy}\\
-  \email{marino@dia.uniroma3.it}
+	\affaddr{Universit\`a Roma Tre}\\
+	\affaddr{Dipartimento di Ingegneria}\\
+	\affaddr{Universit\`a Roma Tre}\\
+	\affaddr{Rome, Italy}\\
+	\email{marino@dia.uniroma3.it}
 \and
 % 3rd. author
 \alignauthor
 Tiziano Sperati\\
-  \affaddr{Universit\`a Roma Tre}\\
-  \affaddr{Dipartimento di Ingegneria}\\
-  \affaddr{Universit\`a Roma Tre}\\
-  \affaddr{Rome, Italy}\\
-  \email{sperati@dia.uniroma3.it}
+	\affaddr{Universit\`a Roma Tre}\\
+	\affaddr{Dipartimento di Ingegneria}\\
+	\affaddr{Universit\`a Roma Tre}\\
+	\affaddr{Rome, Italy}\\
+	\email{sperati@dia.uniroma3.it}
 % 4th. author
 \alignauthor
 Federico Spini\\
-  \affaddr{Universit\`a Roma Tre}\\
-  \affaddr{Dipartimento di Ingegneria}\\
-  \affaddr{Universit\`a Roma Tre}\\
-  \affaddr{Rome, Italy}\\
-  \email{spini@dia.uniroma3.it}
+	\affaddr{Universit\`a Roma Tre}\\
+	\affaddr{Dipartimento di Ingegneria}\\
+	\affaddr{Universit\`a Roma Tre}\\
+	\affaddr{Rome, Italy}\\
+	\email{spini@dia.uniroma3.it}
 }
 % There's nothing stopping you putting the seventh, eighth, etc.
 % author on the opening page (as the 'third row') but we ask,
@@ -133,7 +133,7 @@ is available on the web page to help you with the
 
 \terms{Theory}
 
-\keywords{Web Application, Web Platform, Single Page Application, Content Management System, Web Components, API}
+\keywords{API, Content Management System, Single Page Application, Web Application, Web Components, Web Platform}
 
 \section{Introduction}
 
@@ -157,6 +157,11 @@ An application interacts with data sources through the LoopBack model API, avail
 Clients can call LoopBack APIs directly using Strong Remoting, a pluggable transport layer that enables you to provide backend APIs over REST, WebSockets, and other transports.
 The following diagram illustrates key LoopBack modules, how they are related, and their dependencies. [10]
 
+In the present time open source content management system (CMS) has gained a big market. Lots of varieties are available based on functionality and platform.
+As told in there are different performance criteria like page load time (PLT), page size (PS), number of request, number of CSS and JS files etc. while comparing all these parameters we could come to conclusion that which CMS should be used under what conditions [19].
+
+Generally all CMSs fulfill common task of content like create, edit, publish. But above mention CMS are providing good user support, security, more plug-ins, documentation etc than other.
+
 \subsection{Single Page Applications}
 
 A single-page application (SPA), is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience akin to a desktop application. In an SPA, either all necessary code - HTML, JavaScript, and CSS - is retrieved with a single page load, or the appropriate resources are dynamically loaded and added to the page as necessary, usually in response to user actions. The page does not reload at any point in the process, nor does control transfer to another page, although modern web technologies (such as those included in the HTML5 pushState() API) can provide the perception and navigability of separate logical pages in the application. Interaction with the single page application often involves dynamic communication with the web server behind the scenes.
@@ -169,10 +174,10 @@ Web Components are a collection of standards which are working their way through
 
 \begin{description}
 \itemsep1pt\parskip0pt\parsep0pt
-  \item[Custom Elements] This specification describes the method for enabling the author to define and use new types of DOM elements in a document.
-  \item[HTML Imports] HTML Imports are a way to include and reuse HTML documents in other HTML documents.
-  \item[Templates] This specification describes a method for declaring inert DOM subtrees in HTML and manipulating them to instantiate document fragments with identical contents.
-  \item[Shadow DOM] This specification describes a method of establishing and maintaining functional boundaries between DOM trees and how these trees interact with each other within a document, thus enabling better functional encapsulation within the DOM.
+	\item[Custom Elements] This specification describes the method for enabling the author to define and use new types of DOM elements in a document.
+	\item[HTML Imports] HTML Imports are a way to include and reuse HTML documents in other HTML documents.
+	\item[Templates] This specification describes a method for declaring inert DOM subtrees in HTML and manipulating them to instantiate document fragments with identical contents.
+	\item[Shadow DOM] This specification describes a method of establishing and maintaining functional boundaries between DOM trees and how these trees interact with each other within a document, thus enabling better functional encapsulation within the DOM.
 \end{description}
 
 \subsection{Web Components Frameworks}
@@ -195,7 +200,13 @@ la realizzazione di un API-centric CMS/SPA Application framework Web Components 
 
 \section{X-Project}
 
-X-Project is...
+X-Project is a next-generation API-centric HTML5 Web Components based Web Application and CMS framework.
+This project is next-generation because it uses web components...;
+API-centric because....
+HTML5 Web Components based because...
+Web Application and CMS framework because...
+
+
 
 \subsection{Philosophy}
 
@@ -215,22 +226,22 @@ Client/Server API-centric architecture for Single Page Applications.
 
 \begin{description}
 \itemsep1pt\parskip0pt\parsep0pt
-  \item[Node.js web framework] 
-    Node.js è un framework event-driven per il motore JavaScript V8, su piattaforme UNIX like. Si tratta quindi di un framework relativo all'utilizzo server-side di Javascript.
-  \item[MongDB]
-    MongoDB è un database non relazionale, orientato ai documenti. Classificato come un database di tipo NoSQL, MongoDB si allontana dalla struttura tradizionale basata su tabelle dei database relazionali in favore di documenti in stile JSON con schema dinamico (MongoDB chiama il formato BSON), rendendo l'integrazione di dati di alcuni tipi di applicazioni più facile e veloce.
+	\item[Node.js web framework] 
+		Node.js è un framework event-driven per il motore JavaScript V8, su piattaforme UNIX like. Si tratta quindi di un framework relativo all'utilizzo server-side di Javascript.
+	\item[MongDB]
+		MongoDB è un database non relazionale, orientato ai documenti. Classificato come un database di tipo NoSQL, MongoDB si allontana dalla struttura tradizionale basata su tabelle dei database relazionali in favore di documenti in stile JSON con schema dinamico (MongoDB chiama il formato BSON), rendendo l'integrazione di dati di alcuni tipi di applicazioni più facile e veloce.
 \item[NoSQL]
-    NoSQL (often interpreted as Not only SQL[1][2]) database provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases. Motivations for this approach include simplicity of design, horizontal scaling, and finer control over availability. The data structures used by NoSQL databases (e.g. key-value, graph, or document) differ from those used in relational databases, making some operations faster in NoSQL and others faster in relational databases. The particular suitability of a given NoSQL database depends on the problem it must solve. 
-  \item[Strongloop]
-    StrongLoop offers a subscription-based product known as StrongLoop Suite. StrongLoop Suite includes three components: an open source private mobile Backend-as-a-Service mBaaS named LoopBack; a second component called StrongOps, which provides operations and real-time performance monitoring in a console; and a supported package of Node.js called StrongNode, containing advanced debugging, clustering and support for private npm registries.
+		NoSQL (often interpreted as Not only SQL[1][2]) database provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases. Motivations for this approach include simplicity of design, horizontal scaling, and finer control over availability. The data structures used by NoSQL databases (e.g. key-value, graph, or document) differ from those used in relational databases, making some operations faster in NoSQL and others faster in relational databases. The particular suitability of a given NoSQL database depends on the problem it must solve. 
+	\item[Strongloop]
+		StrongLoop offers a subscription-based product known as StrongLoop Suite. StrongLoop Suite includes three components: an open source private mobile Backend-as-a-Service mBaaS named LoopBack; a second component called StrongOps, which provides operations and real-time performance monitoring in a console; and a supported package of Node.js called StrongNode, containing advanced debugging, clustering and support for private npm registries.
 \end{description}
 
 \subsubsection{Client-side}
 
 \begin{description}
 \itemsep1pt\parskip0pt\parsep0pt
-       \item[Polymer.js]
-       \item[Web Components] 
+			 \item[Polymer.js]
+			 \item[Web Components] 
 \end{description}
 
 
@@ -248,11 +259,11 @@ elementi strutturali compongono la pagina
 
 \begin{description}
 \itemsep1pt\parskip0pt\parsep0pt
-       \item[x-header], barra di navigazione
-       \item[x-footer], per le informazioni a piè di pagina come autore, copyright, madeby, social buttons
-       \item[x-drawer], struttura per menu laterale a scomparsa
-       \item[x-page], struttura per una pagina
-       \item[x-content], struttura per un contenuto generico
+			 \item[x-header], barra di navigazione
+			 \item[x-footer], per le informazioni a piè di pagina come autore, copyright, madeby, social buttons
+			 \item[x-drawer], struttura per menu laterale a scomparsa
+			 \item[x-page], struttura per una pagina
+			 \item[x-content], struttura per un contenuto generico
 \end{description}
 
 
@@ -263,7 +274,7 @@ elementi strutturali compongono la pagina
 
 \begin{description}
 \itemsep1pt\parskip0pt\parsep0pt
-      \item[x-link], estensione dell'elemento anchor ({\tt <a>}) per evitare il comportamento di default e richidere la pagina al server, ma gestire il routing localmente 
+			\item[x-link], estensione dell'elemento anchor ({\tt <a>}) per evitare il comportamento di default e richidere la pagina al server, ma gestire il routing localmente 
 \end{description}
 
 
@@ -271,9 +282,9 @@ elementi strutturali compongono la pagina
 
 \begin{description}
 \itemsep1pt\parskip0pt\parsep0pt
-       \item[x-map] (google maps)
-       \item[x-location] (google place API wrapper)
-       \item[x-contact] (form di elementi di input aggregati per le informazioni di un contatto)
+			 \item[x-map] (google maps)
+			 \item[x-location] (google place API wrapper)
+			 \item[x-contact] (form di elementi di input aggregati per le informazioni di un contatto)
 \end{description}
 
 
@@ -282,14 +293,14 @@ elementi strutturali compongono la pagina
 
 \begin{description}
 \itemsep1pt\parskip0pt\parsep0pt
-       \item[x-input, x-textarea, x-number, x-date, x-datetime] elementi rispettivamente per testo breve, testo lungo, numeri, date, date e orario
+			 \item[x-input, x-textarea, x-number, x-date, x-datetime] elementi rispettivamente per testo breve, testo lungo, numeri, date, date e orario
 \end{description}
 
 \subsubsection{Style elements}
 
 \begin{description}        
 \itemsep1pt\parskip0pt\parsep0pt
-       \item[x-bootstrap] e la libreria bootstrap adattata
+			 \item[x-bootstrap] e la libreria bootstrap adattata
 per stilizzare elementi dello shadow dom nota su stilizzare gli elementi. lo
 stile di un elemento si può mettere inline 
 \end{description}
@@ -313,35 +324,19 @@ Tali type sono:
 
 \begin{itemize}
 \itemsep1pt\parskip0pt\parsep0pt
-       \item number: x-number
-       \item string: x-input,
-       \item select: x-select,
-       \item date: x-date,
-       \item enum: x-radio,
-       \item number: x-number,
-       \item email: x-email,
-       \item textarea: x-textarea,
-       \item url: x-url,
-       \item boolean: x-checkbox,
-       \item money: x-money,
-       \item password: x-password
+			 \item number: x-number
+			 \item string: x-input,
+			 \item select: x-select,
+			 \item date: x-date,
+			 \item enum: x-radio,
+			 \item number: x-number,
+			 \item email: x-email,
+			 \item textarea: x-textarea,
+			 \item url: x-url,
+			 \item boolean: x-checkbox,
+			 \item money: x-money,
+			 \item password: x-password
 \end{itemize}
-
-
-\section{Conclusion}
-
-The advantages of this approach ar
-
-\subsection{Statistical comparison}
-
-In the present time open source content management system (CMS) has gained a big market. Lots of varieties are available based on functionality and platform.
-As told in there are different performance criteria like page load time (PLT), page size (PS), number of request, number of CSS and JS files etc. while comparing all these parameters we could come to conclusion that which CMS should be used under what conditions [19].
-
-Generally all CMSs fulfill common task of content like create, edit, publish. But above mention CMS are providing good user support, security, more plug-ins, documentation etc than other.
- 
-As shown in [20] there are about thirty features to analyze to make a comparison of CMSs. We can design six important classes of features that summarize all the features.
-
-Admin Management, Data Management, User Management, UI Management, Web Content Management, Multimedia Data Management.
 
 \subsection{Security}
 
@@ -354,6 +349,34 @@ Consequently, by including potentially untrusted remote scripts, a Web applicati
 Web components are the most viable starting point for creating a protection mechanism for private data and sensitive elements against opportunistic attackers. They offer the required flexibility to cope with the highly dynamic requirements of modern Web applications, as opposed to iframes, and already possess the capability to host a separate DOM tree using the shadow DOM, a property that is hard to achieve using JavaScript sandboxing technologies [17].
 
 To leverage Web components to create protected Web components, we must be able to hide static data in the DOM tree, without it being accessible to opportunistic attackers. Second, protected Web components should be able to host interactive elements, without being vulnerable to script-based compromises-for example, through function-overriding or prototype-poisoning attacks [18].
+
+PARLARE DI ACCESS TOKEN, API REST E SSL(HTTPS)
+
+\section{Workflow/Use case}
+SCREENSHOT(x4/x6)
+	ADMIN SIDE: list post e edit post
+	USER SIDE: list post e post preview
+
+Il caso d'uso iniziale si basa sull'utilizzo di un blog. Tale caso d'uso prevede l'interazione con il sistema di due attori: l'utente e l'admin.
+L'admin è l'addetto alla generazione e alla gestione dei post del blog, mentre l'utente è colui che ne fruisce i contenuti.
+
+Analizziamo prima il workflow relaitivo ad un'operazione standard dell'admin.
+La pagina iniziale prevede l'autenticazione dell'admin attreverso delle credenziali (username e password) che permettono la generazione del token univoco di sessione. Il sistema effettua l'autenticazione delle credenziali e l'admin può accedere al pannello di amministrazione. Il sistema mostra all'admin una serie di modelli, tra cui il modello blog. La pagina blog mostra la lista di post già presenti nel db e, per ognuno di essi, fornisce la possibilità di editarne il contenuto o di eliminazione.
+Inoltre, nella pagina, viene visualizzata la funzione di inserimento di un nuovo post.
+Sia per quest'ultima funzione che per la modifica del post, viene generata automaticamente, a partire dal modello JSON, una form composta da x-element. Ad ogni tipo di dato presente nel modello viene associato l'x-element corrispondente (come visto in 5.1).
+Giunto sulla pagina di edit o su quella relativa all'aggiunta di un nuovo post, l'admin effettua gli inserimenti desiderati e pubblica il nuovo documento.
+
+Passiamo alla visione dal lato dell'utente. 
+L'utente interagisce con le pagine web senza nemmeno accorgersi della presenza di una sezione dedicata agli amministratori. Dunque l'interazione avviene come per un normale sito web. In questo particolare caso d'uso all'utente, entrando nella sezione blog, viene mostrata una lista dei post pubblicati dagli admin (partendo dai più recenti). Per ogni post all'interno della lista viene visualizzata una serie di informazioni: titolo, autore, data di pubblicazione e antemprima del contenuto. Inoltre ad ogni post è associato un tasto che permette la lettura del post in versione espansa, in una pagina dedicata.
+\section{Conclusion}
+
+The advantages of this approach are
+ 
+As shown in [20] there are about thirty features to analyze to make a comparison of CMSs. We can design six important classes of features that summarize all the features.
+
+Admin Management, Data Management, User Management, UI Management, Web Content Management, Multimedia Data Management.
+
+
 
 
 \section{Future development}

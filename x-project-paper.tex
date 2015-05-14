@@ -1,389 +1,591 @@
 \documentclass{sig-alternate}
+%\usepackage[latin1]{inputenc} % Windows
+\usepackage[utf8x]{inputenc} % Linux (unicode package needed)
+% \usepackage[applemac]{inputenc} % Mac
+
+\usepackage{url}
+
+\usepackage{balance}
+
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{hyperref}
+
+\usepackage{xcolor}
+\usepackage{color}
+
+\newcommand{\brand}[1]{\textbf{\tt #1}}
+
+\usepackage{enumitem}
+\setlist[description]{leftmargin=\parindent}
+
+\definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{editorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
+\definecolor{editorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{FEFEFE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\usepackage{upquote}
+\usepackage{listings}
+\lstdefinelanguage{JavaScript}{
+  morekeywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morestring=[b]",
+  morestring=[b]'
+}
+
+\lstdefinelanguage{HTML5}{
+        language=html,
+        sensitive=true, 
+        alsoletter={<>=-},
+        otherkeywords={
+        % HTML tags
+        <html>, <head>, <title>, </title>, <meta, />, </head>, <body>,
+        <canvas, \/canvas>, <script>, </script>, </body>, </html>, <!, html>, <style>, </style>, ><
+        },  
+        ndkeywords={
+        % General
+        =,
+        % HTML attributes
+        charset=, id=, width=, height=,
+        % CSS properties
+        border:, transform:, -moz-transform:, transition-duration:, transition-property:, transition-timing-function:
+        },  
+        morecomment=[s]{<!--}{-->},
+        tag=[s]
+}
+
+\lstset{%
+    % Basic design
+    backgroundcolor=\color{white},
+    basicstyle={\scriptsize\ttfamily},   
+    frame=l,
+    % Line numbers
+    xleftmargin={0.75cm},
+    numbers=left,
+    stepnumber=1,
+    firstnumber=1,
+    numberfirstline=true,
+    % Code design   
+    keywordstyle=\color{blue}\bfseries,
+    commentstyle=\color{darkgray}\ttfamily,
+    ndkeywordstyle=\color{editorGreen}\bfseries,
+    stringstyle=\color{delim},
+    % Code
+    language=HTML5,
+    alsolanguage=JavaScript,
+    alsodigit={.:;},
+    tabsize=2,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    extendedchars=true,
+    breaklines=true,        
+    % Support for German umlauts
+    literate=%
+    {Ö}{{\"O}}1
+    {Ä}{{\"A}}1
+    {Ü}{{\"U}}1
+    {ß}{{\ss}}1
+    {ü}{{\"u}}1
+    {ä}{{\"a}}1
+    {ö}{{\"o}}1
+}
+
+\lstdefinelanguage{json}{
+    basicstyle=\scriptsize\ttfamily,
+    % numbers=left,
+    % numberstyle=\scriptsize,
+    % stepnumber=1,
+    % numbersep=8pt,
+    % showstringspaces=false,
+    % breaklines=true,
+    % frame=lines,
+    backgroundcolor=\color{background},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
 
 \begin{document}
-%
-% --- Author Metadata here ---
-\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
-%\CopyrightYear{2012} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
-%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
-% --- End of Author Metadata ---
 
-\title{X-Project: next-generation API-centric HTML5 Web Components based Web Application and CMS framework}
+% Copyright
+\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%\setcopyright{usgov}
+%\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
 
-% \titlenote{A full version of this paper is available as
-% \emph{Author's Guide to Preparing ACM SIG Proceedings Using
-% \LaTeX$2_\epsilon$\ and BibTeX} at
-% \texttt{www.acm.org/eaddress.htm}}}
-% 
-% You need the command \numberofauthors to handle the 'placement
-% and alignment' of the authors beneath the title.
-%
-% For aesthetic reasons, we recommend 'three authors at a time'
-% i.e. three 'name/affiliation blocks' be placed beneath the title.
-%
-% NOTE: You are NOT restricted in how many 'rows' of
-% "name/affiliations" may appear. We just ask that you restrict
-% the number of 'columns' to three.
-%
-% Because of the available 'opening page real-estate'
-% we ask you to refrain from putting more than six authors
-% (two rows with three columns) beneath the article title.
-% More than six makes the first-page appear very cluttered indeed.
-%
-% Use the \alignauthor commands to handle the names
-% and affiliations for an 'aesthetic maximum' of six authors.
-% Add names, affiliations, addresses for
-% the seventh etc. author(s) as the argument for the
-% \additionalauthors command.
-% These 'additional authors' will be output/set for you
-% without further effort on your part as the last section in
-% the body of your article BEFORE References or any Appendices.
 
-\numberofauthors{4} %  in this sample file, there are a *total*
-% of EIGHT authors. SIX appear on the 'first-page' (for formatting
-% reasons) and the remaining two appear in the \additionalauthors section.
-%
+% DOI
+\doi{10.475/123_4}
+
+% ISBN
+\isbn{123-4567-24-567/08/06}
+
+%Conference
+\conferenceinfo{DocEng2015}{Sep 8--11, 2015, Lausanne, Switzerland}
+
+\acmPrice{\$15.00}
+
+\title{x-project: a document-oriented toolkit to design and implement Web Applications based on HTML5 Web Components}
+
+\numberofauthors{4} 
 \author{
-% You can go ahead and credit any number of authors here,
-% e.g. one 'row of three' or two rows (consisting of one row of three
-% and a second row of one, two or three).
-%
-% The command \alignauthor (no curly braces needed) should
-% precede each author name, affiliation/snail-mail address and
-% e-mail address. Additionally, tag each line of
-% affiliation/address with \affaddr, and tag the
-% e-mail address with \email.
-%
-% 1st. author
 \alignauthor
 Andrea D'Amelio\\
-	\affaddr{Universit\`a Roma Tre}\\
-	\affaddr{Dipartimento di Ingegneria}\\
-	\affaddr{Universit\`a Roma Tre}\\
-	\affaddr{Rome, Italy}\\
-	\email{damelio@dia.uniroma3.it}
-% 2nd. author
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Dipartimento di Ingegneria}\\
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Rome, Italy}\\
+  \email{damelio@ing.uniroma3.it}
 \alignauthor
 Enrico Marino\\
-	\affaddr{Universit\`a Roma Tre}\\
-	\affaddr{Dipartimento di Ingegneria}\\
-	\affaddr{Universit\`a Roma Tre}\\
-	\affaddr{Rome, Italy}\\
-	\email{marino@dia.uniroma3.it}
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Dipartimento di Ingegneria}\\
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Rome, Italy}\\
+  \email{marino@ing.uniroma3.it}
 \and
-% 3rd. author
 \alignauthor
 Tiziano Sperati\\
-	\affaddr{Universit\`a Roma Tre}\\
-	\affaddr{Dipartimento di Ingegneria}\\
-	\affaddr{Universit\`a Roma Tre}\\
-	\affaddr{Rome, Italy}\\
-	\email{sperati@dia.uniroma3.it}
-% 4th. author
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Dipartimento di Ingegneria}\\
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Rome, Italy}\\
+  \email{sperati@ing.uniroma3.it}
 \alignauthor
 Federico Spini\\
-	\affaddr{Universit\`a Roma Tre}\\
-	\affaddr{Dipartimento di Ingegneria}\\
-	\affaddr{Universit\`a Roma Tre}\\
-	\affaddr{Rome, Italy}\\
-	\email{spini@dia.uniroma3.it}
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Dipartimento di Ingegneria}\\
+  \affaddr{Universit\`a Roma Tre}\\
+  \affaddr{Rome, Italy}\\
+  \email{spini@ing.uniroma3.it}
 }
-% There's nothing stopping you putting the seventh, eighth, etc.
-% author on the opening page (as the 'third row') but we ask,
-% for aesthetic reasons that you place these 'additional authors'
-% in the \additional authors block, viz.
-% \additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
-% email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
-% (The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
-% \date{30 July 1999}
-% Just remember to make sure that the TOTAL number of authors
-% is the number that will appear on the first page PLUS the
-% number that will appear in the \additionalauthors section.
 
 \maketitle
+
 \begin{abstract}
-This paper introduces X-Project, a next-generation API-centric HTML5 Web Components based Web Application and CMS framework.
-X-project is designed to allow the development of dynamic web applications and Content Management Systems.
-X-Project's goal is to provide an easy way both to build REST API, using StrongLoop/Loopback framework, and to create intuitive and fancy UIs HTML5 Web Components based, using Polymer-Project.
-X-Project expects three actors using the system: developers, admins and users. Developers' job is really simplified both in backend and in frontend side. Using Strongloop framework and an automatical generation of forms script, the developer concern is limited to the JSON models' creation. Moreover X-Project provides a dedicated Web Components library to make easier the UI structuring.
-Admins can take advantage of an intuitive and featured panel to management website's content.
-Eventually, users benefit of a plain UI thanks to the mix of Web Components used to build pages' composition.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 \end{abstract}
 
-% A category with the (minimum) three required fields
-\category{H.4}{Information Systems Applications}{Miscellaneous}
-%A category including the fourth, optional field follows...
-\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
 
-\terms{Theory}
+%
+% The code below should be generated by the tool at
+% http://dl.acm.org/ccs.cfm
+% Please copy and paste the code instead of the example below. 
+%
 
-\keywords{API, Content Management System, Single Page Application, Web Application, Web Components, Web Platform}
+\begin{CCSXML}
+<ccs2012>
+<concept>
+<concept_id>10002951.10003260.10003282</concept_id>
+<concept_desc>Information systems~Web applications</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10010405.10010476.10010479</concept_id>
+<concept_desc>Applied computing~Cartography</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10010405.10010497.10010510.10010514</concept_id>
+<concept_desc>Applied computing~Format and notation</concept_desc>
+<concept_significance>500</concept_significance>
+</concept>
+<concept>
+<concept_id>10010520.10010521.10010537.10010538</concept_id>
+<concept_desc>Computer systems organization~Client-server architectures</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+<concept>
+<concept_id>10010520.10010570.10010574</concept_id>
+<concept_desc>Computer systems organization~Real-time system architecture</concept_desc>
+<concept_significance>300</concept_significance>
+</concept>
+</ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Information systems~Web applications}
+\ccsdesc[500]{Applied computing~Cartography}
+\ccsdesc[500]{Applied computing~Format and notation}
+\ccsdesc[300]{Computer systems organization~Client-server architectures}
+\ccsdesc[300]{Computer systems organization~Real-time system architecture}
+
+%
+% End generated code
+%
+
+%
+%  Use this command to print the description
+%
+\printccsdesc
+
+
 
 \section{Introduction}
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-A web application framework is a software framework that is designed to support the development of dynamic web applications.
-To speed up web application development, action based frameworks mostly rely on external configuration files
-Regarding to numerous open source web frameworks, it becomes so difficult for developers to select a suitable framework for web applications development. Because of that, the purpose of this paper is to help web developers to easier choose the right framework for development of their web applications. The paper will analyze a few open source Java component based frameworks. Additionally, the paper will provide basic features of the analyzed frameworks as well as represent their most important characteristics. Also, in this paper the analyzed web frameworks will be compared and summarized [1, 2, 3].
 
-\section{State of the art}
+Section 2 presents the context where \brand{x-project} is positioned, overviewing the CMS evolution; section 3 introduces \brand{x-project}, its philosophy and architecture. Section 4 shows a case study in which is implemented a blog using x-project toolkit. Finally, section 5 draws conclusions.
 
-Web  \`e una collezione di standard all'avanguardia che ci fornisce la possibilit\'a di creare widget, \`e totalmente riusabile e non interferisce con il funzionamento della pagina in caso di cambiamento dell'implementazione interna del componente.
-Nello sviluppo di un widget \`e importante utilizzare abilmente Javascript e HTML per la visualizzazione dinamica dei contenuti e gli standard di Web Components sono orientati verso ci\'o. L'unico, fondamentale, problema relativo allo sviluppo di Web Components \`e dettato dal DOM. Il DOM interno a un widget non \`e incapsulato dal resto della pagina. Questa mancanza potrebbe portare a problemi di sovrascritture da parte della pagina su elementi all'interno del widget.
-Open-source software (OSS) is computer software with its source code made available with a license in which the copyright holder provides the rights to study, change and distribute the software to anyone and for any purpose.[21] Open-source software is developed in a collaborative public manner. Open-source software is the most prominent example of open-source development and often compared to (technically defined) user-generated content or (legally defined) open-content movements.[22]
 
-\subsection{Web Application and CMS platforms}
+\section{Evolution of CMSs}
+One generally accepted definition of Content Management System is: a system that lets you apply management principles to content.
 
-One universal definition of Content Management System is: ``A system that lets you apply management principles to content"[4].
-WordPress is a free and open-source CMS based on PHP and MySQL. Features include a plugin architecture and a template system [5]. WordPress was used by more than 23.3% of the top 10 million websites as of January 2015 [6]. WordPress is the most popular blogging system in use on the Web, at more than 60 million websites [7, 8].
-Keystone.js is a Node.js CMS and Web Application Platform. It is an open source framework for developing database-driven websites, applications and APIs in Node.js. It is built on Express and MongoDB [9].
-The LoopBack framework is a set of Node.js modules that you can use independently or together.  
-An application interacts with data sources through the LoopBack model API, available locally within Node.js, remotely over REST, and via native client APIs for iOS, Android, and HTML5. Using these APIs, apps can query databases, store data, upload files, send emails, create push notifications, register users, and perform other actions provided by data sources and services.
-Clients can call LoopBack APIs directly using Strong Remoting, a pluggable transport layer that enables you to provide backend APIs over REST, WebSockets, and other transports.
-The following diagram illustrates key LoopBack modules, how they are related, and their dependencies. [10]
+It is simple to elicit an evolutionary path in the history of management systems whose milestones are identifiable in \emph{Joomla!}, \emph{Wordpress} and \emph{KeystoneJS}.
 
-In the present time open source content management system (CMS) has gained a big market. Lots of varieties are available based on functionality and platform.
-As told in there are different performance criteria like page load time (PLT), page size (PS), number of request, number of CSS and JS files etc. while comparing all these parameters we could come to conclusion that which CMS should be used under what conditions [19].
+Alongside these milestones entire constellations of analogous experiences popped up, but we considered them not relevant since they borrowed main features and constitutive approaches from cited ones. 
 
-Generally all CMSs fulfill common task of content like create, edit, publish. But above mention CMS are providing good user support, security, more plug-ins, documentation etc than other.
+Starting from \emph{Joomla!}, a framework that drove in the engineering into the world of web content management. Joomla! powers more than 2,7\% of the largest 1,000,000 web sites in the world \cite{usage-cms}. Anyway, nowadays, \emph{Joomla!} results unwieldy and, due to its monolithic approach, not complied to current web features.
 
-\subsection{Single Page Applications}
+\emph{Wordpress}, instead is used by more than 23.3\% of the top 10 million websites (as of January 2015) \cite{usage-cms}. Wordpress develop CMS’s idea, driving in the intention to use CMSs to build Web Application. Wordpress, with its plugin, aims to limber user experience. The availability of more than 37,000 plugins, because it lets to create sites to non-experts too.
+Anyway, further customizations, other than the ones introduced by plugins, are difficult to deploy due to loosely code engeneering of this tool.
 
-A single-page application (SPA), is a web application or web site that fits on a single web page with the goal of providing a more fluid user experience akin to a desktop application. In an SPA, either all necessary code - HTML, JavaScript, and CSS - is retrieved with a single page load, or the appropriate resources are dynamically loaded and added to the page as necessary, usually in response to user actions. The page does not reload at any point in the process, nor does control transfer to another page, although modern web technologies (such as those included in the HTML5 pushState() API) can provide the perception and navigability of separate logical pages in the application. Interaction with the single page application often involves dynamic communication with the web server behind the scenes.
+Finally, \emph{KeystoneJs} stand in the last position. Minimal and agile, KeystoneJS, embody the new era of the CMS, letting the user to make his own personal web application.
 
-\section{Next generation technologies and frameworks}
+In the spite of focusing on very minimal features, a mention goes to Ghost, a non-profit, open source blogging Node.js based platform, which represents a transversal experience, although minimal brings a new light way to blogging.
 
-\subsection{WebComponents}
-
-Web Components are a collection of standards which are working their way through the W3C and landing in browsers as we speak. In a nutshell, they allow us to bundle markup and styles into custom HTML elements. What's truly amazing about these new elements is that they fully encapsulate all of their HTML and CSS. That means the styles that you write always render as you intended, and your HTML is safe from the prying eyes of external JavaScript. [11]
-
-\begin{description}
-\itemsep1pt\parskip0pt\parsep0pt
-	\item[Custom Elements] This specification describes the method for enabling the author to define and use new types of DOM elements in a document.
-	\item[HTML Imports] HTML Imports are a way to include and reuse HTML documents in other HTML documents.
-	\item[Templates] This specification describes a method for declaring inert DOM subtrees in HTML and manipulating them to instantiate document fragments with identical contents.
-	\item[Shadow DOM] This specification describes a method of establishing and maintaining functional boundaries between DOM trees and how these trees interact with each other within a document, thus enabling better functional encapsulation within the DOM.
-\end{description}
-
-\subsection{Web Components Frameworks}
-
-Web Components usher in a new era of web development based on encapsulated and interoperable custom elements that extend HTML itself.
-There are three major frameworks built atop these new standards: Polymer, X-Tag and Bosonic.
-Moreover there are some Web Application Frameworks that are moving their philosophy towards Web Components such as AngularJS [101, 200, 201] and EmberJS [102].
-Polymer makes it easier and faster to create elements, from a button to a complete application across desktop, mobile, and beyond. The Polymer core provides a thin layer of API on top of web components. It expresses Polymer's opinion, provides the extra sugaring that all Polymer elements use, and is meant to help make developing web components much easier [103].
-X-Tag allows to easily create elements to encapsulate common behavior or use existing custom elements to quickly get the behavior desired. X-Tag provides several powerful features that streamline element creation such as: custom events and delegation, mixins, accessors and component lifecycle functions [104].
-Bosonic is a set of tools that enable the built and use reusable Web Components. By leveraging the power of DOM to build high-level elements, it allows to simplify application's code and benefits from 3rd-party elements [105].
-
-\subsection{WebComponents libraries}
-
-(customelements.io, comp kitchen, paper element)
-
-\section{Contribution}
-
-The real contribution of the work presented in this paper is...
-la realizzazione di un API-centric CMS/SPA Application framework Web Components based.API-centrico basato su API builder strongloop loopback vantaggi immediati, separazione degli interessi, 
-
-\section{X-Project}
-
-X-Project is a next-generation API-centric HTML5 Web Components based Web Application and CMS framework.
-This project is next-generation because it uses web components...;
-API-centric because....
-HTML5 Web Components based because...
-Web Application and CMS framework because...
+Eventually, \brand{x-project}, for the reasons the will be clear in the remaining of this paper, could be thought as the last standing in this path of decreasing monolithic approach and increasing customization and code engineering.
 
 
 
-\subsection{Philosophy}
+\section{x-project toolkit}
+\brand{x-project} is a set of libraries and API-centric HTML5 Web Components based Web Application and CMS framework.
 
-``Everything is an elemen", even a page. 
-ogni parte del sito \`e incapsulata in un elemento, anche componenti funzionali come servizi http (chiamate ajax) possono essere incapsulate in un elemento...
 
-\subsubsection{Components}
 
-da Web services and web components
-Component-based Software Engineering denotes the process of building software by (re)using pre-built software components. The main benefit of component-based software is the ``time-to-market" [12], thus reducing the cost of developing the software. A software component is a unit of composition with contractually specified interfaces and explicit context dependencies. Additionally, a component is a software element that conforms to a component model and can be independently deployed and composed [13]. Component based software is developed interconnecting building blocks, therefore, a high degree of reusability and modularity is achieved by this type of applications [14].
+% \subsection{Philosophy}
+``Everything is an element'', even an AJAX request. Every part of the website is encapsulated inside an element. Even functional components such as HTTP services (AJAX calls), pages and routing logic are encapsulated inside elements. We push Web Components' philosophy beyond all limits so that users can reach a very high level of customization and ease of use.
+
+Component-based Software Engineering denotes the process of building software by (re)using pre-built software components. The main benefit of component-based software is the ``time-to-market'' \cite{4773208}, thus reducing the cost of developing the software. A software component is a unit of composition with contractually specified interfaces and explicit context dependencies. 
+Additionally, a component is a software element that conforms to a component model and can be independently deployed and composed \cite{Heineman:2001:CSE:379381}. 
+Component based software is developed interconnecting building blocks, therefore, a high degree of reusability and modularity is achieved by this type of applications \cite{914739}. 
+
+
 
 \subsection{Architecture}
+\brand{x-project} architecture is client-server.
+The full technology stack is JavaScript based.
 
-Client/Server API-centric architecture for Single Page Applications.
-
-\subsubsection{Server-side}
-
-\begin{description}
-\itemsep1pt\parskip0pt\parsep0pt
-	\item[Node.js web framework] 
-		Node.js \`e un framework event-driven per il motore JavaScript V8, su piattaforme UNIX like. Si tratta quindi di un framework relativo all'utilizzo server-side di Javascript.
-	\item[MongDB]
-		MongoDB \`e un database non relazionale, orientato ai documenti. Classificato come un database di tipo NoSQL, MongoDB si allontana dalla struttura tradizionale basata su tabelle dei database relazionali in favore di documenti in stile JSON con schema dinamico (MongoDB chiama il formato BSON), rendendo l'integrazione di dati di alcuni tipi di applicazioni pi\`u facile e veloce.
-\item[NoSQL]
-		NoSQL (often interpreted as Not only SQL[1][2]) database provides a mechanism for storage and retrieval of data that is modeled in means other than the tabular relations used in relational databases. Motivations for this approach include simplicity of design, horizontal scaling, and finer control over availability. The data structures used by NoSQL databases (e.g. key-value, graph, or document) differ from those used in relational databases, making some operations faster in NoSQL and others faster in relational databases. The particular suitability of a given NoSQL database depends on the problem it must solve. 
-	\item[Strongloop]
-		StrongLoop offers a subscription-based product known as StrongLoop Suite. StrongLoop Suite includes three components: an open source private mobile Backend-as-a-Service mBaaS named LoopBack; a second component called StrongOps, which provides operations and real-time performance monitoring in a console; and a supported package of Node.js called StrongNode, containing advanced debugging, clustering and support for private npm registries.
-\end{description}
-
-\subsubsection{Client-side}
+Server-side is based on Node.js.
 
 \begin{description}
 \itemsep1pt\parskip0pt\parsep0pt
-			 \item[Polymer.js]
-			 \item[Web Components] 
+        \item[Node.js] (\url{http://nodejs.org}) is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications.
+        \item[Express.js] (\url{http://expressjs.com}) is a minimal and flexible Node.js web application framework that provides a set of features for web and mobile applications.
+        \item[Loopback] (\url{http://loopback.io}) is a set of Node.js modules to develop Web Servers applications. An application interacts with data sources through the LoopBack model API, available locally within Node.js, remotely over REST.
+        \item[MongoDB] (\url{https://www.mongodb.org/}) is an open-source document database that provides high performance, high availability, and automatic scaling.
 \end{description}
 
 
-\subsection{X-Elements components}
-
-Come, polymer-project, offre una libreria di elementi, chiamata paper-elements, 
-x-project offre una libreria di elementi, illustrati in questa sezione
-possiamo classificare gli elementi in  strutturali, applicativi, form, di stile.
-
-
-
-\subsubsection{Strctural elements}
-
-elementi strutturali compongono la pagina
+Client-side is based on Web Components.
 
 \begin{description}
 \itemsep1pt\parskip0pt\parsep0pt
-			 \item[x-header], barra di navigazione
-			 \item[x-footer], per le informazioni a pi\`e di pagina come autore, copyright, madeby, social buttons
-			 \item[x-drawer], struttura per menu laterale a scomparsa
-			 \item[x-page], struttura per una pagina
-			 \item[x-content], struttura per un contenuto generico
+        \item[Web Components] are a collection of standards which are working their way through the W3C and landing in browsers at the moment. In a nutshell, they allow us to bundle markup and styles into custom HTML elements.
+\emph{Custom Elements}\cite{custom-elements}, \emph{HTML Imports}\cite{html-imports}, \emph{HTML Templates}\cite{html-templates}, \emph{Shadow DOM}\cite{shadow-dom}.
+        \item[webcomponent.js polyfills] enable Web Components in (evergreen) browsers that lack native support.
+Web Components specifications are currently W3C Working Draft, so they aren’t fully supported across all major browsers.
+As these technologies are implemented in browsers, the polyfills will shrink to gain the benefits of native implementations. \cite{webcomponents-polyfills} 
+        \item[Polymer library] (\url{https://www.polymer-project.org/}) provides a thin layer of API on top of web components (native implementations and their polyfills) and several powerful features, such as custom events and delegation, mixins, accessors and component lifecycle functions, that makes it easier and faster to create Web Components. Similar to \emph{Polymer} are \emph{x-tag} and \emph{Bosonic}.
+        \item[iron-elements] \cite{iron-elements} is a library of utility Polymer elements from ajax requests to input elements. 
+There are web repositories like \url{http://component.kitchen} and \url{http://customelements.io} that already counts thousands of open source user-contributed custom elements.
 \end{description}
 
+% \begin{figure}[!htbp]
+% \centering
+% \epsfig{file=images/stack.eps, height=0.2\textwidth}
+% \caption{Technology stack}
+% \label{fig:tech-stack}
+% \end{figure}
 
-
-
-
-\subsubsection{Routing elements}
-
-\begin{description}
-\itemsep1pt\parskip0pt\parsep0pt
-			\item[x-link], estensione dell'elemento anchor ({\tt <a>}) per evitare il comportamento di default e richidere la pagina al server, ma gestire il routing localmente 
-\end{description}
-
-
-\subsubsection{Form elements}
-
-\begin{description}
-\itemsep1pt\parskip0pt\parsep0pt
-			 \item[x-map] (google maps)
-			 \item[x-location] (google place API wrapper)
-			 \item[x-contact] (form di elementi di input aggregati per le informazioni di un contatto)
-\end{description}
-
-
-
-\subsubsection{Input elements}
-
-\begin{description}
-\itemsep1pt\parskip0pt\parsep0pt
-			 \item[x-input, x-textarea, x-number, x-date, x-datetime] elementi rispettivamente per testo breve, testo lungo, numeri, date, date e orario
-\end{description}
-
-\subsubsection{Style elements}
-
-\begin{description}        
-\itemsep1pt\parskip0pt\parsep0pt
-			 \item[x-bootstrap] e la libreria bootstrap adattata
-per stilizzare elementi dello shadow dom nota su stilizzare gli elementi. lo
-stile di un elemento si pu\'o mettere inline 
-\end{description}
-
+% \begin{figure}[!h]
+%  \centering
+%  \begin{subfigure}[b]{0.53\linewidth}
+%  \includegraphics[width=\textwidth]{images/stack.eps} 
+%  \caption{Technology stack.}
+%  \label{fig:tech-stack}
+%  \end{subfigure}
+%  ~
+%  \begin{subfigure}[b]{0.43\linewidth}
+%  \includegraphics[width=\textwidth]{images/client-arch.eps}
+%  \caption{Client-side architecture}
+%  \label{fig:client-arch}
+%  \end{subfigure}
  
+%  % \caption{Office building: 
+%  % (a) the schematic plan; 
+%  % (b) the simplified 3D model generated for testing on the field 
+%  % the indoor mapping project described in this paper.
+%  % }
+%  % \label{fig:sogei}
+% \end{figure}
 
-ma si possono anche stilizzare elementi dall'esterno, accedendo tramite i selettori CSS allo shadow dom, usando /deep/
-
-link a github 
-
-
-\subsection{Model definition}
-
-To speed up web application development, action based frameworks mostly rely on external configuration files and less on Java code [15]
-avviene tramite JSON
+% \begin{figure}[!htbp]
+% \centering
+% \epsfig{file=images/client-arch.eps, height=0.2\textwidth}
+% \caption{Client-side architecture}
+% \label{fig:client-arch}
+% \end{figure}
 
 
-CMS definito tramite modelli. Un modello \`e definito da un json, estensione dei models di loopback. Il generatore di API di loopback usa questi modelli. Hanno un campo type. Nell'estensione, per non entrare in conflitto con loopback, viene aggiunto un campo {\tt \$type}.
-A ogni tipo di dato \`e associato un campo di input corrispondente. 
-Tali type sono: 
+\subsection{Server-side}
+The Web Application development is document-driven.
 
-\begin{itemize}
+To speed up web application development, frameworks mostly rely on external configuration files and less on procedural code \cite{6859693}.
+
+
+In \brand{x-project}, server-side, the documents that drive the development are the schema of the models of the application.
+
+
+These are json document. Each document represent a model and has the following fields: the \texttt{name} of the model, the set of \texttt{properties}, the list of \texttt{relations} to others models and the list of \texttt{ACL} (Access Control Layer) rules. 
+
+\brand{x-project} (using Loopback) generates model’s API from the models schemas, to let CRUD operations on models (e.g. a model \texttt{Author} that describe a blog author generates the following HTTP RESTful API: \texttt{GET /api/authors/} to get all authors, \texttt{POST /api/authors/} to add a new author, \texttt{GET /api/authors/:author\_id} and \texttt{PUT /api/authors/:author\_id} to get (or to update) the author with id ``\texttt{author\_id}''. 
+Since an blog author have blog posts (its model has a relation one-to-many to model \texttt{Post}) there are also the API to handle author's posts: \texttt{GET /api/authors/:author\_id/posts}, etc.
+
+The API can be extended: the developer can add remote functions to models or add hooks to existing APIs to add behaviour before and/or after the API handler (to preprocess the request and/or postprocess the response).
+
+The API are RESTful, cookie free, signed by authentication token.
+
+\brand{x-project} applications have a built-in model that represent a user, with properties \texttt{username}, \texttt{email} and \texttt{password} for login and the property \texttt{role} used by the ACL module.
+By default, only user with role \texttt{admin} can create/update/delete models in the applications.
+
+
+\subsubsection{Third party services}
+\brand{x-project} is designed to be connected to microservices. These tools are accessible extending the Web Application API.
+
+An essential feature of a CMS is media storage (documents, images and videos) \cite{5552271}. 
+
+\brand{x-project} provides a remote storage service implemented as a direct upload module to AWS Amazon S3 storage service. The media to upload don’t pass through the server but are sent directly to AWS using a signed request.
+The signature of the request is provided by the module.
+The module has to be configured with the AWS bucket settings: bucket name, public and secret keys. 
+
+% \begin{figure}[!htbp]
+% \centering
+% \epsfig{file=images/services.eps, height=0.24\textwidth}
+% \caption{Third parties services}
+% \label{fig:services}
+% \end{figure}
+
+
+\subsection{Client-side}
+
+Client-side can be divided in two parts: \texttt{admin part} and \texttt{user part}.
+\texttt{admin part} is automatically generated from the models schemas. It let the admin to manage (via CRUD operations) the models.
+\texttt{user part} depends on the type of the Web Application that has been implemented.
+It is the part the final user interact with.
+
+% \begin{figure}[!htbp]
+% \centering
+% \epsfig{file=images/client-arch.eps, height=0.2\textwidth}
+% \caption{Client-side architecture}
+% \label{fig:client-arch}
+% \end{figure}
+
+\brand{x-project} provide a set of Polymer element for local routing, API requests, User management, forms composition, layout and style. 
+
+\subsubsection{Elements for local routing}
+\brand{x-project} provide elements to perform local routing to implement Single Page Application pattern.
+
+\begin{description}
 \itemsep1pt\parskip0pt\parsep0pt
-			 \item number: x-number
-			 \item string: x-input,
-			 \item select: x-select,
-			 \item date: x-date,
-			 \item enum: x-radio,
-			 \item number: x-number,
-			 \item email: x-email,
-			 \item textarea: x-textarea,
-			 \item url: x-url,
-			 \item boolean: x-checkbox,
-			 \item money: x-money,
-			 \item password: x-password
-\end{itemize}
+        \item[\texttt{<x-router>}] implements local routing based on \emph{HTML5 Push State API}. 
+        \item[\texttt{<x-route>}] represents a route-to-page mapping. It has two input attributes: \texttt{route} and \texttt{page}. A route can be parametrized: parameters are sent as attributes to the corresponding page.
+        \item[\texttt{<x-link>}] is the extension of the native anchor element (\texttt{<a>}). It prevents the default behavior, blocking page request to the server and letting to manage the routing locally. 
+\end{description}
 
-\subsection{Security}
+\subsubsection{Elements for API requests}
+\texttt{x-projects} provide a set of elements to handle collections and models API.
 
-Third-party code inclusion is rampant, potentially exposing sensitive data to attackers. Protected Web components can keep private data safe from opportunistic attacks by hiding static data in the Document Object Model (DOM) and isolating sensitive interactive elements within a Web component.
-The Web has evolved from including static images and document links to comprising Web applications with individual components provided by numerous service providers. When a Web application incorporates third-party components using remote scripts, the user's browser will run the third-party code within the security context of the Web application. This not only exposes the code's functionality to the Web application but also gives the included code full access to the Web application's client-side context, including the page's content, local data, and origin-protected functionality. 
-This lack of code isolation can have severe consequences if the included code doesn't behave correctly.
+\begin{description}
+\itemsep1pt\parskip0pt\parsep0pt
+       \item[\texttt{<api-collection-get>}] retrieve a collection of models. It has input attributes to handle filters and pagination and an output attributes that stores the collection.
+       \item[\texttt{<api-collection-post>}] add a new model to the collection. It has an input attribute that refers to the model to save.
+       \item[\texttt{<api-collection-schema>}] retrieve a model schema.
+       \item[\texttt{<api-model-(get|put|delete)>}] retrieve, update or delete a model. These have an input attribute that refers to the model.
+\end{description}
 
-Consequently, by including potentially untrusted remote scripts, a Web application developer accepts a certain risk, both for the site's integrity and for the safekeeping of user data [16].
+For example, the following element perform an \texttt{HTTP GET} request to \texttt{/api/Posts} using filter and returning the first 10 items of the second page and the total number of items (helpful for pagination element).
 
-Web components are the most viable starting point for creating a protection mechanism for private data and sensitive elements against opportunistic attackers. They offer the required flexibility to cope with the highly dynamic requirements of modern Web applications, as opposed to iframes, and already possess the capability to host a separate DOM tree using the shadow DOM, a property that is hard to achieve using JavaScript sandboxing technologies [17].
+\begin{lstlisting}[language=HTML5]
+<api-collection-get name="Posts" 
+  perpage="10" page="2" filter="{{filter}}"
+  collection="{{posts}}" count="{{count}}">
+</api-collection-get>
+\end{lstlisting}
 
-To leverage Web components to create protected Web components, we must be able to hide static data in the DOM tree, without it being accessible to opportunistic attackers. Second, protected Web components should be able to host interactive elements, without being vulnerable to script-based compromises-for example, through function-overriding or prototype-poisoning attacks [18].
 
-PARLARE DI ACCESS TOKEN, API REST E SSL(HTTPS)
+\subsubsection{Elements for User management}
+\brand{x-project} provides a set of elements to manage User.
+\texttt{<x-login>} is a form (with \texttt{email} and \texttt{password} input elements) that let the user login in the application. Once logged in, every API request is signed with a token that refers to the current user, for ACL reasons.
 
-\section{Workflow/Use case}
-SCREENSHOT(x4/x6)
-	ADMIN SIDE: list post e edit post
-	USER SIDE: list post e post preview
 
-Il caso d'uso iniziale si basa sull'utilizzo di un blog. Tale caso d'uso prevede l'interazione con il sistema di due attori: l'utente e l'admin.
-L'admin \`e l'addetto alla generazione e alla gestione dei post del blog, mentre l'utente \`e colui che ne fruisce i contenuti.
+\subsubsection{Elements for forms composition}
+\brand{x-project} provides a set of input elements to create forms. 
 
-Analizziamo prima il workflow relaitivo ad un'operazione standard dell'admin.
-La pagina iniziale prevede l'autenticazione dell'admin attreverso delle credenziali (username e password) che permettono la generazione del token univoco di sessione. Il sistema effettua l'autenticazione delle credenziali e l'admin pu\'o accedere al pannello di amministrazione. Il sistema mostra all'admin una serie di modelli, tra cui il modello blog. La pagina blog mostra la lista di post gi\'a presenti nel db e, per ognuno di essi, fornisce la possibilit\'a di editarne il contenuto o di eliminazione.
-Inoltre, nella pagina, viene visualizzata la funzione di inserimento di un nuovo post.
-Sia per quest'ultima funzione che per la modifica del post, viene generata automaticamente, a partire dal modello JSON, una form composta da x-element. Ad ogni tipo di dato presente nel modello viene associato l'x-element corrispondente (come visto in 5.1).
-Giunto sulla pagina di edit o su quella relativa all'aggiunta di un nuovo post, l'admin effettua gli inserimenti desiderati e pubblica il nuovo documento.
+\texttt{<x-input>}, \texttt{<x-textarea>}, \texttt{<x-number>}, \texttt{<x-date>}, are respectively associated to short text, long text, number, and date; \texttt{<x-location>}, based on Google Place APIs, allows to choose locations using autocomplete add-on; \texttt{<x-file>}, based on the \brand{x-project} direct upload module, allows to upload files.
+\texttt{<x-form>}, given a model schema, generates a form to edit models that match that schema; it is a composition of the input elements.
 
-Passiamo alla visione dal lato dell'utente. 
-L'utente interagisce con le pagine web senza nemmeno accorgersi della presenza di una sezione dedicata agli amministratori. Dunque l'interazione avviene come per un normale sito web. In questo particolare caso d'uso all'utente, entrando nella sezione blog, viene mostrata una lista dei post pubblicati dagli admin (partendo dai pi\`u recenti). Per ogni post all'interno della lista viene visualizzata una serie di informazioni: titolo, autore, data di pubblicazione e antemprima del contenuto. Inoltre ad ogni post \`e associato un tasto che permette la lettura del post in versione espansa, in una pagina dedicata.
+\subsubsection{Elements for layout and style}
+\brand{x-project} provides a set of elements for layout, such as: \texttt{<x-page>}, \texttt{<x-header>}, \texttt{<x-navbar>}, \texttt{<x-sidebar>}, \texttt{<x-footer>}, respectively to define the structure of the page, to add header, navbar, sidebar and footer.
+
+\brand{x-project} style is based on \texttt{iron-flex-layout} \cite{iron-elements}, a CSS library of style mixins for cross-platform Flexible Box \cite{css-flexbox} layouts.
+
+\section{Case study}
+In this section we discuss the design and the implementation of a blog platform. 
+
+\subsection{server-side}
+For a blog platform the entities to model are: \texttt{Author}, \texttt{Post} and \texttt{Tag}.
+
+\texttt{Post} model (defined below) represent a blog post.
+
+\begin{lstlisting}[language=json]
+{
+  "name": "Post",
+  "properties": {
+    "title": { "type": "string" },
+    "posted": { "type": "date" },
+    "content": { "type": "text" },
+  }, 
+  "relations": [{ 
+    "name": "author", 
+    "type": "belongs_to",
+    "model": "Author",
+  }, {
+    "name": "tags", 
+    "type": "has_many",
+    "model": "Tag",
+  }]
+}
+\end{lstlisting}
+
+\texttt{Tag} model represent a tag in a post.
+
+\texttt{Author} model represent a blog author. It has properties that describe an author, such as \texttt{full\_name}, and one \texttt{has\_many} relation to \texttt{Post} model.
+
+  
+\subsection{client-side}
+Client-side pages are encapsulated in elements that extend \texttt{<x-page>} element. These pages can be divided in two parts: Admin and User.
+
+\subsubsection{Admin part}
+The \emph{Admin part} is automatically generated. 
+It consists of the following pages: \texttt{<page-collections>}, \texttt{<page-collection>}, \texttt{<page-model-edit>}.
+
+\vspace{0.2cm}
+
+\texttt{<page-collections>} is the main page. It show the collections of the app. In this case, these are \texttt{Authors}, \texttt{Posts} and \texttt{Tag}.
+
+\vspace{0.2cm}
+
+\texttt{<page-collection>} show the model instances of a collection.
+
+\begin{lstlisting}[language=HTML5]
+<page-collection>
+  <api-collection-get 
+    name="{{collection_name}}" 
+    filter="{{filter}}"
+    collection="{{collection}}">
+  </api-collection-get>
+  <part-collection-filter 
+    name="{{collection_name}}"  
+    filter="{{filter}}">
+  </part-collection-filter>
+  <part-list 
+    list="{{collection}}">
+  </part-list>
+  <part-paginator 
+    list="{{list}}" 
+    filter="{{filter}}"
+    current="{{page}}">
+  </part-paginator>
+</page-collection>
+\end{lstlisting}
+
+\vspace{0.2cm}
+
+\texttt{<page-model-edit>} presents the forms to update a model.
+The form is automatically generated from the model schema.
+This page is composed by an \texttt{<api-model-get>} element that retrieve the model to edit. The model schema (retrieved with the model) is passed to a \texttt{<x-form>} element that presents an input element for each property of the model. The type of the input element corresponds to the type of the property (e.g. a \emph{boolean} property is editable via a \texttt{<x-checkbox>} element).
+
+\subsubsection{User part}
+The \emph{User part} must be designed by the developer.
+It consists of the following pages: \texttt{<page-author>}, \texttt{<page-posts>} and \texttt{<page-post>}. 
+
+\vspace{0.2cm}
+
+\texttt{<page-posts>} show the list of posts. It use \texttt{<api-collection-get>}, \texttt{<x-paginator>}, and \texttt{<x-list>} to retrieve, paginate and list the posts.
+
+\vspace{0.2cm}
+
+\texttt{<page-post>} show a post. It is accessible via 
+\texttt{<x-route path="/posts/:post\_id" page="page-post">}. It use \texttt{<api-model-get>} to retrieve the post using the \texttt{post\_id} parameter matched in the url.
+
+\begin{lstlisting}[language=HTML5]
+<page-post>
+  <api-model-get name="Posts" 
+    model-id="{{post_it}}" model="{{post}}">
+  </api-model-get>
+  <h1>{{post.title}}</h1>
+  <h2>by {{post.author}}</h2>
+  <h3>on {{post.date}}</h3>
+  <div>{{post.content}}</div>
+</page-post>
+\end{lstlisting}
+
 \section{Conclusion}
 
-The advantages of this approach are
+In the present time open source CMS has gained a big market. 
+Generally all CMSs fulfill common task of content like create, edit, publish. 
+Lots of varieties are available based on functionality and platform, such as \emph{good user support}, \emph{security aspects}, \emph{plug-ins ecosystem}, \emph{documentation}, etc.
+
+\cite{6169111} propose different performance criteria like \emph{page load time}, \emph{page size}, \emph{number of request}, \emph{number of bootstrap resources files}.
  
-As shown in [20] there are about thirty features to analyze to make a comparison of CMSs. We can design six important classes of features that summarize all the features.
+\cite{5552271} propose about thirty features criteria that could be classified in: \emph{Admin Management}, \emph{Data Management}, \emph{User Management}, \emph{UI Management}, \emph{Web Content Management}, \emph{Multimedia Data Management}.
 
-Admin Management, Data Management, User Management, UI Management, Web Content Management, Multimedia Data Management.
-
-
-
-
-\section{Future development}
-
-estensione libreria elementi
-
-
-
-
-%
-% The following two commands are all you need in the
-% initial runs of your .tex file to
-% produce the bibliography for the citations in your paper.
 \bibliographystyle{abbrv}
-\bibliography{x-project-paper}  % doceng2015.bib is the name of the Bibliography in this case
-% You must have a proper ".bib" file
-%  and remember to run:
-% latex bibtex latex latex
-% to resolve all references
-%
-% ACM needs 'a single self-contained file'!
-%
-%\balancecolumns
+\bibliography{x-project-paper}
 \end{document}
+
+
+
+
 

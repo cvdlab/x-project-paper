@@ -1,30 +1,13 @@
 \section{Architecture}\label{sec:architecture}
 
-Web applications developed exploiting \brand{x-project} toolkit present are
-full stack {\em JavaScript}.
+Web applications developed exploiting \brand{x-project} toolkit are full stack {\em JavaScript}. 
 
-On the server-side they rely on {\em Node.js}, exploiting the power of the
-{\em Loopback} framework by {\em Strongloop}. As mention above, the aim is to
-have a development process entirely document-driven, and those documents are
-the schemas of the models used by the application. These are JSON documents.
-Each document represents a model and presents the following fields: the
-\texttt{name} of the model, the set of \texttt{properties}, the list of
-\texttt{relations} to others models and the list of \texttt{ACL} (Access
-Control Layer) rules.
+On the server-side they rely on {\em Node.js}, exploiting the power of the {\em Loopback} framework by {\em Strongloop}. As mention above, the aim is to have a development process entirely document-driven, and those documents are the schemas of the models used by the application. These are JSON documents. Each document represents a model and presents the following fields: the \texttt{name} of the model, the set of \texttt{properties}, the list of \texttt{relations} to others models and the list of \texttt{ACL} (Access Control Layer) rules. 
 
-{\em Loopback} generates model’s API from the models schemas, to let CRUD
-operations on models (e.g. a model \texttt{Author} that describe a blog author
-generates the following HTTP RESTful API: \texttt{{\bf GET} /api/authors/} to
-get all authors, \texttt{{\bf POST} /api/authors/} to add a new author,
-\texttt{{\bf GET} /api/authors/:author\_id} and \texttt{{\bf PUT}
-/api/authors/:author\_id} to get (or to update) the author with id
-``\texttt{author\_id}''.  Since an blog author have blog posts (its model has
-a relation one-to-many to model \texttt{{\bf Post}}) there are also the API to
-handle author's posts: \texttt{{\bf GET} /api/authors/:author\_id/posts}, etc.
+{\em Loopback} generates model’s API from the models schemas, to let CRUD operations on models.
 
-The API can be extended: the developer can add remote functions to models or
-add hooks to existing APIs to add behaviour before and/or after the API
-handler (to preprocess the request and/or postprocess the response).
+The API can be extended: the developer can add remote functions to models or add hooks to existing APIs to add behaviour before and/or after the API handler (to preprocess the request and/or postprocess the response). 
+
 
 The resulting API is RESTful, cookie free, signed by authentication token.
 

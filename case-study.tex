@@ -1,10 +1,9 @@
 \section{Case study}
 In this section we discuss the design and the implementation of a blog platform. 
 
-\subsection{server-side}
-For a blog platform the entities to model are: \texttt{Author}, \texttt{Post} and \texttt{Tag}.
+\subsection{Models}
 
-\texttt{Post} model (defined below) represent a blog post.
+For a blog platform the essential entities to model are: \texttt{Post} and \texttt{Tag}.
 
 \begin{lstlisting}[language=json]
 {
@@ -13,79 +12,40 @@ For a blog platform the entities to model are: \texttt{Author}, \texttt{Post} an
     "title": { "type": "string" },
     "posted": { "type": "date" },
     "content": { "type": "text" },
+    "permalink": { "type": "string" }
   }, 
-  "relations": [{ 
-    "name": "author", 
-    "type": "belongs_to",
-    "model": "Author",
-  }, {
+  "relations": [{
     "name": "tags", 
-    "type": "has_many",
-    "model": "Tag",
+    "type": "has_many", 
+    "model": "Tag"
   }]
 }
 \end{lstlisting}
 
-\texttt{Tag} model represent a tag in a post.
-
-\texttt{Author} model represent a blog author. It has properties that describe an author, such as \texttt{full\_name}, and one \texttt{has\_many} relation to \texttt{Post} model.
-
-  
-\subsection{client-side}
-Client-side pages are encapsulated in elements that extend \texttt{<x-page>} element. These pages can be divided in two parts: Admin and User.
-
-\subsubsection{Admin part}
-The \emph{Admin part} is automatically generated. 
-It consists of the following pages: \texttt{<page-collections>}, \texttt{<page-collection>}, \texttt{<page-model-edit>}.
-
-\vspace{0.2cm}
-
-\texttt{<page-collections>} is the main page. It show the collections of the app. In this case, these are \texttt{Authors}, \texttt{Posts} and \texttt{Tag}.
-
-\vspace{0.2cm}
-
-\texttt{<page-collection>} show the model instances of a collection.
-
-\begin{lstlisting}[language=HTML5]
-<page-collection>
-  <api-collection-get 
-    name="{{collection_name}}" 
-    filter="{{filter}}"
-    collection="{{collection}}">
-  </api-collection-get>
-  <part-collection-filter 
-    name="{{collection_name}}"  
-    filter="{{filter}}">
-  </part-collection-filter>
-  <part-list 
-    list="{{collection}}">
-  </part-list>
-  <part-paginator 
-    list="{{list}}" 
-    filter="{{filter}}"
-    current="{{page}}">
-  </part-paginator>
-</page-collection>
+\begin{lstlisting}[language=json]
+{
+  "name": "Tag",
+  "properties": {
+    "name": { "type": "string" }
+  }
+}
 \end{lstlisting}
 
-\vspace{0.2cm}
 
-\texttt{<page-model-edit>} presents the forms to update a model.
-The form is automatically generated from the model schema.
-This page is composed by an \texttt{<api-model-get>} element that retrieve the model to edit. The model schema (retrieved with the model) is passed to a \texttt{<x-form>} element that presents an input element for each property of the model. The type of the input element corresponds to the type of the property (e.g. a \emph{boolean} property is editable via a \texttt{<x-checkbox>} element).
+\subsection{Pages}
 
-\subsubsection{User part}
-The \emph{User part} must be designed by the developer.
-It consists of the following pages: \texttt{<page-author>}, \texttt{<page-posts>} and \texttt{<page-post>}. 
+\texttt{<page-posts>} show the list of posts.
 
-\vspace{0.2cm}
+It use \texttt{<api-collection-get>}, \texttt{<x-paginator>}, and \texttt{<x-list>} to retrieve, paginate and list the posts.
 
-\texttt{<page-posts>} show the list of posts. It use \texttt{<api-collection-get>}, \texttt{<x-paginator>}, and \texttt{<x-list>} to retrieve, paginate and list the posts.
+\begin{lstlisting}[language=HTML5]
+<page-post>
+</page-post>
+\end{lstlisting}
 
-\vspace{0.2cm}
+\texttt{<page-post>} show a post. 
 
-\texttt{<page-post>} show a post. It is accessible via 
-\texttt{<x-route path="/posts/:post\_id" page="page-post">}. It use \texttt{<api-model-get>} to retrieve the post using the \texttt{post\_id} parameter matched in the url.
+It is accessible via \texttt{<x-route path="/posts/:post\_id" page="page-post"}
 
 \begin{lstlisting}[language=HTML5]
 <page-post>

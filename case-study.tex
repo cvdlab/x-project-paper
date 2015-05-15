@@ -39,8 +39,21 @@ For a blog platform the essential entities to model are: \texttt{Post} and \text
 It use \texttt{<api-collection-get>}, \texttt{<x-paginator>}, and \texttt{<x-list>} to retrieve, paginate and list the posts.
 
 \begin{lstlisting}[language=HTML5]
-<page-post>
-</page-post>
+<page-posts is="x-page">
+  <api-collection-get name="Posts"
+    page="{{page}}" perpage="10"
+    collection="{{posts}} count="{{count}}">
+  </api-collection-get>
+  <template is="dom-repeat" items="{{posts}}">
+    <div>
+      <h1>{{post.title}}</h1>
+      <h2>by <span>{{post.author}}</span></h2>
+      <h3>on <span>{{post.date}}</span></h3>
+    </div>
+  </template>
+  <x-paginator perpage="10" total="{{count}}" 
+    current="{{page}}></x-paginator>
+</page-posts>
 \end{lstlisting}
 
 \texttt{<page-post>} show a post. 
@@ -48,13 +61,13 @@ It use \texttt{<api-collection-get>}, \texttt{<x-paginator>}, and \texttt{<x-lis
 It is accessible via \texttt{<x-route path="/posts/:post\_id" page="page-post"}
 
 \begin{lstlisting}[language=HTML5]
-<page-post>
+<page-post is="x-page">
   <api-model-get name="Posts" 
-    model-id="{{post_it}}" model="{{post}}">
+    model-id="{{post_id}}" model="{{post}}">
   </api-model-get>
   <h1>{{post.title}}</h1>
-  <h2>by {{post.author}}</h2>
-  <h3>on {{post.date}}</h3>
+  <h2>by <span>{{post.author}}</span></h2>
+  <h3>on <span>{{post.date}}</span></h3>
   <div>{{post.content}}</div>
 </page-post>
 \end{lstlisting}

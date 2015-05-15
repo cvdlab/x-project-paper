@@ -39,8 +39,10 @@ These elements handle models API.
 
 \begin{lstlisting}[language=HTML5]
 <api-collection-get name="{{name}}" 
-  filter="{{f}}" page="{{p}}" perpage="{{l}}"  
-  collection="{{items}}" count="{{count}}">
+  filter="{{filter}}" 
+  page="{{page}}" perpage="{{perpage}}"  
+  collection="{{items}}" schema="{{schema}}"
+  count="{{count}}">
 </api-collection-get>
 \end{lstlisting}
 
@@ -63,7 +65,9 @@ These elements handle models API.
 
 \begin{lstlisting}[language=HTML5]
 <api-model-get name="{{name}}" 
-  model-id="{{model_id}}"></api-model-get>
+  model-id="{{model_id}}"
+  model="{{model}}" schema="{{schema}}">
+</api-model-get>
 \end{lstlisting}
 
 \texttt{<api-model-put>} retrieve a model. 
@@ -74,7 +78,7 @@ These elements handle models API.
 \end{lstlisting}
 
 
-\subsubsection{Elements for forms composition}
+\subsubsection{Elements for lists and forms}
 These elements are used to create forms (even dinamically from a schema). 
 
 \texttt{<x-input>} is an extension of the input element. 
@@ -86,24 +90,28 @@ It's type can be \texttt{string}, \texttt{date}, \texttt{email}, \texttt{locatio
   value="{{value}}"></x-input>
 \end{lstlisting}
 
-\texttt{<x-form>} generate a form dinamically from a model schema.
+\texttt{<x-form>} generate dinamically (from a model schema) a form to create/update a model.
 
 \begin{lstlisting}[language=HTML5]
 <x-form schema="schema" 
   model="{{model}}"></x-form>
 \end{lstlisting}
 
+\texttt{<x-filter>} generate dinamically (from a model schema) a form to create an API filter.
+
+\begin{lstlisting}[language=HTML5]
+<x-filter schema="{{schema}}"
+  filter="{{filter}}"></api-filter>
+\end{lstlisting}
+
+\texttt{<x-table>} generate dinamically (froma a model schema) a table of models. 
+
+\begin{lstlisting}[language=HTML5]
+<x-table schema="{{schema}}" 
+  collection="{{collection}}"></x-table>
+\end{lstlisting}
+
 \subsubsection{Elements for layout and style}
-
-\texttt{<x-page>} define the structure of a page.
-
-\texttt{<x-header>} define a header.
-
-\texttt{<x-navbar>} define a navbar.
-
-\texttt{<x-sidebar>} define a sidebar.
-
-\texttt{<x-footer>} define a footer.
 
 The style is based on \texttt{iron-flex-layout} \cite{iron-elements}, a CSS library of style mixins for cross-platform Flexible Box \cite{css-flexbox} layouts.
 
@@ -115,43 +123,56 @@ The style is based on \texttt{iron-flex-layout} \cite{iron-elements}, a CSS libr
 Client-side can be divided in two parts: \texttt{admin part} and \texttt{user part}.
 
 The \emph{Admin part} is automatically generated. 
-It consists of the following pages: \texttt{<page-collections>}, \texttt{<page-collection>}, \texttt{<page-model-edit>}.
+It consists of the following pages: \texttt{<page-collections>}, \texttt{<page-collection>} and \texttt{<page-model-edit>}.
 
-\texttt{<page-collections>} is the admin main page. It show the collections of the app. 
+\texttt{<page-collections>} is the admin main page. It shows the collections of the app. 
 
 \begin{lstlisting}[language=HTML5]
 <page-collections>
+  <ul>
+  <template items="{{collections}}">
+    <li>
+      <a is="x-link" href="/admin/{{item}}">
+        {{item}}
+      </a>
+    </li>
+  </template>
+  </ul>
 </page-collections>
 \end{lstlisting}
 
-\texttt{<page-collection>} show the model instances of a collection.
+\texttt{<page-collection>} shows the model instances of a collection.
 
 \begin{lstlisting}[language=HTML5]
 <page-collection>
-  <api-collection-get 
-    name="{{collection_name}}" 
+  <api-collection-get name="{{collection}}" 
     filter="{{filter}}"
-    collection="{{collection}}">
+    collection="{{list}}">
   </api-collection-get>
-  <part-collection-filter 
-    name="{{collection_name}}"  
-    filter="{{filter}}">
-  </part-collection-filter>
-  <part-list 
-    list="{{collection}}">
-  </part-list>
-  <part-paginator 
-    list="{{list}}" 
-    filter="{{filter}}"
-    current="{{page}}">
+  <x-filter schema="{{schema}}"
+    filter="{{filter}}"></x-filter>
+  <x-table schema="schema" 
+    list="{{list}}">
+  </x-table>
+  <x-paginator current="{{page}}">
   </part-paginator>
 </page-collection>
 \end{lstlisting}
 
-\texttt{<page-model-edit>} presents the forms to update a model.
+\texttt{<page-model-edit>} shows the forms to update a model.
 
 \begin{lstlisting}[language=HTML5]
 <page-model-edit>
+  <api-model-get name="{{collection}}"
+    model-id="model_id"
+    model="{{model}}" schema="{{schema}}">
+  </api-model-get>
+  <x-form 
+    schema="schema" model="model">
+  </x-form>
+  <api-model-put name="{{collection}}"
+    model-id="{{model_id}}">
+  </api-model-put>
 </page-model-edit>
 \end{lstlisting}
 

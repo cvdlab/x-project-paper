@@ -2,12 +2,5 @@
 \BOOKMARK [1][-]{section.2}{Web development cycle}{}% 2
 \BOOKMARK [1][-]{section.3}{Architecture}{}% 3
 \BOOKMARK [1][-]{section.4}{x-project toolkit}{}% 4
-\BOOKMARK [2][-]{subsubsection.4.0.1}{Elements for local routing}{section.4}% 5
-\BOOKMARK [3][-]{subsubsection.4.0.2}{Elements for API requests}{subsubsection.4.0.1}% 6
-\BOOKMARK [3][-]{subsubsection.4.0.3}{Elements for lists and forms}{subsubsection.4.0.1}% 7
-\BOOKMARK [3][-]{subsubsection.4.0.4}{Elements for layout and style}{subsubsection.4.0.1}% 8
-\BOOKMARK [3][-]{subsubsection.4.0.5}{Admin pages}{subsubsection.4.0.1}% 9
-\BOOKMARK [1][-]{section.5}{Case study}{}% 10
-\BOOKMARK [2][-]{subsection.5.1}{Models}{section.5}% 11
-\BOOKMARK [2][-]{subsection.5.2}{Pages}{section.5}% 12
-\BOOKMARK [1][-]{section.6}{References}{}% 13
+\BOOKMARK [1][-]{section.5}{Case study}{}% 5
+\BOOKMARK [1][-]{section.6}{References}{}% 6

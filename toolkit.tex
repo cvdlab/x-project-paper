@@ -2,171 +2,158 @@
 
 ``Everything is an element'', from an AJAX request to an entire web page. Every part of the website is encapsulated inside an element. 
 
-\brand{x-project} provide a set of Polymer element for local routing, API requests, User management, forms composition, layout and style. 
+\brand{x-project} provide a set of Polymer element for local routing, API requests, forms, lists, and style. 
 
-\subsubsection{Elements for local routing}
-These elements can be used to perform local routing (for Single Page Application.
-
-\vspace{0.2cm}
-
-\texttt{<x-router>} implements local routing based on \emph{HTML5 Push State API}. 
+Elements can be customized through their attributes. We note that attributes could acts as inputs parameters (values that have effects to the element) or output parameters (values that are returned by the element); futhermore, the output parameter of an element could be an input parameter of another element.  
 
 \vspace{0.2cm}
 
-\texttt{<x-route>} represents a route-to-page mapping. It has two input attributes: \texttt{route} and \texttt{page}. A route can be parametrized: parameters are sent as attributes to the corresponding page.
+The following elements performs local routing (for Single Page Application).
 
 \vspace{0.2cm}
+
+\texttt{<x-router>} implements local routing using \emph{HTML5 Push State API}. It represent the core element of the app. It intercepts routes, create pages, and pass parameters to the page.
+
+\vspace{0.2cm}
+
+\texttt{<x-route>} represents a route-to-page mapping. 
+Parameters presented in an URL are sent as attributes to the corresponding page.
+
+\begin{lstlisting}[language=HTML5]
+<x-route route="{{route}}" page="{{page}}">
+\end{lstlisting}
 
 \texttt{<x-link>} is an extension of the anchor element \texttt{<a>} that prevents the default behavior when a click event occurs, blocking page request to the server and redirecting the request to the local router. 
 
 \begin{lstlisting}[language=HTML5]
-<link rel="import" 
-  href="/elements/page-posts.html">
-<link rel="import" 
-  href="/elements/page-post.html">
-
-<x-router>
-  <x-route route="posts" page="posts">
-  <x-route route="posts/:id" page="post">
-</x-route>
+<a is="x-link" href="{{href}}">{{link}}</a>
 \end{lstlisting}
 
+The following elements handle HTTP RESTful API for the collections of the app.
 
-\subsubsection{Elements for API requests}
-These elements handle models API.
+\vspace{0.2cm}
 
 \texttt{<api-collection-get>} gets a collection of models. 
 
 \begin{lstlisting}[language=HTML5]
 <api-collection-get name="{{name}}" 
-  filter="{{filter}}" 
+  where="{{where}}" 
   page="{{page}}" perpage="{{perpage}}"  
-  collection="{{items}}" schema="{{schema}}"
+  items="{{items}}" schema="{{schema}}"
   count="{{count}}">
 </api-collection-get>
 \end{lstlisting}
 
-\texttt{<api-collection-post>} add a new model to the collection. 
+Where 
+\texttt{name} is the name of the collection to retrieve; 
+\texttt{where} is object that specifies a set of logical conditions to match, similar to a \texttt{WHERE} clause in a SQL query;
+\texttt{page} and \texttt{perpage} are pagination parameters;
+\texttt{collection} is the retrieved collection;
+\texttt{schema} is the schema of the collection;
+\texttt{count} is the number of items in the collection (not the number of items retrieved, that corresponds to \texttt{perpage} value).
+
+\vspace{0.2cm}
+
+\texttt{<api-collection-post>} create a new model. 
 
 \begin{lstlisting}[language=HTML5]
 <api-collection-post name="{{name}}" 
   model="{{model}}"></api-collection-post>
 \end{lstlisting}
 
-\texttt{<api-collection-schema>} retrieve a model schema.
-
-\begin{lstlisting}[language=HTML5]
-<api-collection-schema name="{{name}}" 
-  schema="{{schema}}"></api-collection-schema>
-\end{lstlisting}
-
 \texttt{<api-model-get>} retrieve a model. 
-\texttt{<api-model-delete>} delete a model. 
 
 \begin{lstlisting}[language=HTML5]
-<api-model-get name="{{name}}" 
-  model-id="{{model_id}}"
-  model="{{model}}" schema="{{schema}}">
-</api-model-get>
+<api-model-get name="{{name}}" model-id="{{id}}" 
+  model="{{model}}"></api-model-get>
 \end{lstlisting}
 
-\texttt{<api-model-put>} retrieve a model. 
+Where \texttt{name} is the name of the collection of the model; \texttt{model-id} is the model id; \texttt{model} is the model retrieved (it acts as an output).
+
+\texttt{<api-model-put>} update a model. 
 
 \begin{lstlisting}[language=HTML5]
-<api-model-put name="{{name}}" 
+<api-model-put name="{{name}}" model-id="{{id}}" 
   model="{{model}}"></api-model-put>
 \end{lstlisting}
 
+Where \texttt{model} is the model updated (it acts as an input).
 
-\subsubsection{Elements for lists and forms}
-These elements are used to create forms (even dinamically from a schema). 
+\vspace{0.2cm}
+
+\texttt{<api-model-del>} delete a model. 
+
+\begin{lstlisting}[language=HTML5]
+<api-model-del name="{{name}}" model-id="{{id}}">
+</api-model-del>
+\end{lstlisting}
+
+\texttt{<api-filter>} generate dinamically (from a model schema) a form to create an API \texttt{where} clause filter.
+
+\begin{lstlisting}[language=HTML5]
+<api-filter schema="{{schema}}"
+  filter="{{filter}}"></api-filter>
+\end{lstlisting}
+
+The following elements are used to create forms. 
+
+\vspace{0.2cm}
 
 \texttt{<x-input>} is an extension of the input element. 
-It's type can be \texttt{string}, \texttt{date}, \texttt{email}, \texttt{location},
-\texttt{number}, \texttt{file}.
 
 \begin{lstlisting}[language=HTML5]
 <x-input type="{{type}}" label="{{label}}"
   value="{{value}}"></x-input>
 \end{lstlisting}
 
+Where \texttt{type} can be \texttt{string}, \texttt{number}, \texttt{date}, \texttt{email}, \texttt{url}, \texttt{location} (with autocompletion based on Google Place API) and \texttt{file}.
+
+\vspace{0.2cm}
+
 \texttt{<x-form>} generate dinamically (from a model schema) a form to create/update a model.
 
 \begin{lstlisting}[language=HTML5]
-<x-form schema="schema" 
+<x-form schema="{{schema}}" 
   model="{{model}}"></x-form>
 \end{lstlisting}
 
-\texttt{<x-filter>} generate dinamically (from a model schema) a form to create an API filter.
+The following elements are used to manage lists. 
+
+\vspace{0.2cm}
+
+\texttt{<x-table>} generate dinamically (from a model schema) a table of models. 
 
 \begin{lstlisting}[language=HTML5]
-<x-filter schema="{{schema}}"
-  filter="{{filter}}"></api-filter>
+<x-table schema="{{schema}}" [editable] 
+  items="{{items}}"></x-table>
 \end{lstlisting}
 
-\texttt{<x-table>} generate dinamically (froma a model schema) a table of models. 
+Where \texttt{schema} is used to generate the columns of the table; 
+\texttt{collection} is used to generate the rows (the values) of the table;
+\texttt{editable} is a optional attribute.
+
+\vspace{0.2cm}
+
+\texttt{<x-pager>} generate the list of links to handle pagination.
 
 \begin{lstlisting}[language=HTML5]
-<x-table schema="{{schema}}" 
-  collection="{{collection}}"></x-table>
+<x-pager count="{{count}}" perpage="{{perpage}}"
+  current="{{page}}"></x-pager>
 \end{lstlisting}
 
-\subsubsection{Elements for layout and style}
+Where \texttt{count} is the total number of item to paginate; 
+\texttt{perpage} is the number of item per page; 
+\texttt{current} is the current page clicked by the user.
+
+By itself pagination doesn't paginate any list, but (as shown in the case study) it can be used in conjunction with \texttt{<api-collection-get>}, where the \texttt{current} output parameter of \texttt{<x-pager>} is the input \texttt{page} parameter of \texttt{<api-collection-get>}.
+
+\vspace{0.2cm}
 
 The style is based on \texttt{iron-flex-layout} \cite{iron-elements}, a CSS library of style mixins for cross-platform Flexible Box \cite{css-flexbox} layouts.
 
+\vspace{0.2cm}
 
-
-
-\subsubsection{Admin pages}
-
-Client-side can be divided in two parts: \texttt{admin part} and \texttt{user part}.
-
-The \emph{Admin part} is automatically generated. 
-It consists of the following pages: \texttt{<page-collections>}, \texttt{<page-collection>} and \texttt{<page-model-edit>}.
-
-
-\texttt{<page-collection>} shows the model instances of a collection.
-
-\begin{lstlisting}[language=HTML5]
-<dom-module id="page-collection">
-<template>
-  <api-collection-get name="{{collection}}" 
-    filter="{{filter}}"
-    collection="{{list}}">
-  </api-collection-get>
-  <x-filter schema="{{schema}}"
-    filter="{{filter}}"></x-filter>
-  <x-table schema="schema" 
-    list="{{list}}">
-  </x-table>
-  <x-paginator current="{{page}}">
-  </part-paginator>
-</template>
-</dom-module>
-\end{lstlisting}
-
-\texttt{<page-model-edit>} shows the forms to update a model.
-
-\begin{lstlisting}[language=HTML5]
-<dom-module id="page-model-edit">
-<template>
-  <api-model-get name="{{collection}}"
-    model-id="model_id"
-    model="{{model}}" schema="{{schema}}">
-  </api-model-get>
-  <x-form 
-    schema="schema" model="model">
-  </x-form>
-  <api-model-put name="{{collection}}"
-    model-id="{{model_id}}">
-  </api-model-put>
-</page-model-edit>
-</dom-module>
-\end{lstlisting}
-
-The \texttt{user part} depends on the type of the Web Application that has been implemented.
-It is the part the final user interact with.
+Even a page can be encapsulated in an element. \brand{x-project} provides a set of pages for the admin part of the app, \texttt{<page-collection>} and \texttt{<page-model-edit>}, presented below.
 
 % \begin{figure}[!htbp]
 % \centering

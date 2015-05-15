@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.17)  15 MAY 2015 10:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.17)  15 MAY 2015 11:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -519,8 +519,7 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
 )
-(./x-project-paper.aux (./introduction.aux) (./cycle.aux) (./architecture.aux)
-(./toolkit.aux) (./case-study.aux) (./conclusions.aux))
+(./x-project-paper.aux)
 \openout1 = `x-project-paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 128.
@@ -540,13 +539,11 @@ LaTeX Font Info:    ... okay on input line 128.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 128.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 128.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 128.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count132
 \scratchdimen=\dimen140
@@ -659,15 +656,39 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]) (./cycle.tex) (./architecture.tex
-Overfull \hbox (1.6365pt too wide) in paragraph at lines 9--10
-[]\T1/aer/m/n/9 ([]$http : / / nodejs . org$[]) is a plat-form built on Chrome'
-s
- []
+]
+
+LaTeX Warning: Reference `related-work' on page \thepage  undefined on input li
+ne 31.
 
 
-Overfull \hbox (1.47502pt too wide) in paragraph at lines 12--13
-[]\T1/aer/m/n/9 ([]$https : / / www . mongodb . org/$[]) is an open-source
+LaTeX Warning: Reference `advances' on page \thepage  undefined on input line 3
+3.
+
+
+LaTeX Warning: Reference `hijson-syntax' on page \thepage  undefined on input l
+ine 34.
+
+
+LaTeX Warning: Reference `hijson-toolkit' on page \thepage  undefined on input 
+line 35.
+
+
+LaTeX Warning: Reference `hijson-web-framework' on page \thepage  undefined on 
+input line 37.
+
+
+LaTeX Warning: Reference `case-study' on page \thepage  undefined on input line
+ 39.
+
+
+LaTeX Warning: Reference `conclusions' on page \thepage  undefined on input lin
+e 41.
+
+) (./cycle.tex) (./architecture.tex
+Overfull \hbox (42.64778pt too wide) in paragraph at lines 6--8
+\T1/aett/m/n/9 /api/au-thors/ \T1/aer/m/n/9 to add a new au-thor, \T1/aer/bx/n/
+9 GET \T1/aett/m/n/9 /api/au-thors/:author_id
  []
 
 
@@ -676,10 +697,9 @@ Overfull \hbox (6.60374pt too wide) in paragraph at lines 20--22
  []
 
 
-Overfull \hbox (17.57826pt too wide) in paragraph at lines 20--22
-\T1/aer/m/it/9 El-e-ments\T1/aer/m/n/9 [[]8[]], \T1/aer/m/it/9 HTML Im-ports\T1
-/aer/m/n/9 [[]9[]], \T1/aer/m/it/9 HTML Tem-plates\T1/aer/m/n/9 [[]10[]], \T1/a
-er/m/it/9 Shadow
+Overfull \hbox (1.0588pt too wide) in paragraph at lines 20--22
+\T1/aer/m/n/9 into cus-tom HTML el-e-ments. \T1/aer/m/it/9 Cus-tom El-e-ments\T
+1/aer/m/n/9 [[]8[]], \T1/aer/m/it/9 HTML
  []
 
 
@@ -693,18 +713,12 @@ Overfull \hbox (52.0533pt too wide) in paragraph at lines 26--28
 http : / / customelements .
  []
 
-
-Overfull \hbox (14.777pt too wide) in paragraph at lines 78--80
-\T1/aett/m/n/9 /api/au-thors/:author_id \T1/aer/m/n/9 and \T1/aett/m/n/9 PUT /a
-pi/au-thors/:author_id
- []
-
 ) (./toolkit.texpdfTeX warning (ext4): destination with the same identifier (na
 me{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.12 
-      [2]
+l.8 
+     [2]
 
 LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
 (Font)              using `T1/aett/m/n' instead on input line 39.
@@ -749,8 +763,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.52     name="
-               {{collection_name}}" [3]
+l.44 
+      [3]
 Overfull \hbox (3.06754pt too wide) in paragraph at lines 73--76
 \T1/aer/m/n/9 with the model) is passed to a \T1/aett/bx/n/9 <x-form> \T1/aer/m
 /n/9 el-e-ment that presents
@@ -781,38 +795,42 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 272.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 272.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 272.
 Package rerunfilecheck Info: File `x-project-paper.out' has not changed.
-(rerunfilecheck)             Checksum: 5267CBCB51285FB711BE1028B54F5916;1236.
+(rerunfilecheck)             Checksum: 6E58EA5C156B3BC7E5DEBA31CD2358E0;1095.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: There were undefined references.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 272.
  ) 
 Here is how much of TeX's memory you used:
- 11535 strings out of 495028
- 165569 string characters out of 6181497
- 349152 words of memory out of 5000000
+ 11527 strings out of 495028
+ 165404 string characters out of 6181497
+ 348152 words of memory out of 5000000
  14415 multiletter control sequences out of 15000+600000
- 63140 words of font info for 90 fonts, out of 8000000 for 9000
+ 66294 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,11n,97p,540b,1976s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,11n,97p,598b,1476s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </root/.texmf-var
 /fonts/pk/ljfour/jknappen/ec/tcrm0900.600pk></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/ty
-pe1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
-tmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on x-project-paper.pdf (4 pages, 193409 bytes).
+s/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
+/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on x-project-paper.pdf (4 pages, 202541 bytes).
 PDF statistics:
- 283 PDF objects out of 1000 (max. 8388607)
- 260 compressed objects within 3 object streams
- 91 named destinations out of 1000 (max. 500000)
- 153 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 273 PDF objects out of 1000 (max. 8388607)
+ 249 compressed objects within 3 object streams
+ 89 named destinations out of 1000 (max. 500000)
+ 137 words of extra memory for PDF output out of 10000 (max. 10000000)
 

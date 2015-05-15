@@ -1,7 +1,42 @@
 \section{Web development cycle}
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+We model the web development process as a four-steps procedure that can be
+applyied recursively to each page (or view) of a web application as well as to
+every single complex component (or widgets) of the page itself.
+
+This modellization is based on the reasonable assumption that server side
+operation on data models are nowadays be sufficently explored, and as proven by
+the {\em Keystone.js} experience, at least one choice is available to automagically  
+1) generate server-side CRUD methods on models with ACL capabilities and 
+2) handle users and sessions, 
+once a JSON description of data models and relations between them are provided to the
+system. This very JSON descriptor documents drive the whole process, actually composed
+by the following four steps.
+
+% se avanza spazio si possono mettere dei nomignoli per ogni stepche potrebbero essere:
+% 1. JSON data model description
+% 2. Model actions definion
+% 3. UI component definition
+% 4. UI component assemplation
+
+{\bf 1\textsuperscript{st} step - JSON data model description}. The JSON
+descriptors must be defined, specifying data type, relation, and user role
+read/write capabilities on particular portion of data.
+
+{\bf 2\textsuperscript{nd} step - Model actions definion}. Since CRUD
+operation coul not be enougth to describe all the needed operation further
+actions on models can be defined and exposed via http verbs.
+
+{\bf 3\textsuperscript{rd} step - UI component definition}. Then individual UI
+component can be defined,  relying exclusively on CRUD operations and actions
+available on data models.
+
+{\bf 4\textsuperscript{th} step - UI component assemplation}. As last task,
+previously defined UI component  have to be mounted to define application
+views. Assembly should be kept as simple as possible, in the case of x-project
+toolkit, it only consists of a juxtaposition of HTML5 tags.
+
+
+
+% DA NOTARE CHE SIA I JSON DESCRIPTORS CHE LE COMPONENTI UI SINGOLE POSSONO ESSERE OLT CHE DEFINITE EX-NOVO,
+% ANCHE RICERCATE IN UN DATABASE CHE NE METTE A DISPOSIZIONE PER MODELLI E COMPONENTI UI DI LARGO E/O FREQUENTE UTILIZZO.

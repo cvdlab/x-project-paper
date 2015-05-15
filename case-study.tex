@@ -31,18 +31,26 @@ For a blog platform the essential entities to model are: \texttt{Post} and \text
 }
 \end{lstlisting}
 
+It results in the following HTTP RESTful API.
+
+\begin{lstlisting}
+GET|POST /api/Posts
+GET|PUT|DELETE /api/Posts/:post_id
+GET|POST /api/Tags
+GET|PUT|DELETE /api/Tags/:tag_id
+\end{lstlisting}
 
 \subsection{Pages}
 
 \texttt{<page-posts>} show the list of posts.
-
-It use \texttt{<api-collection-get>}, \texttt{<x-paginator>}, and \texttt{<x-list>} to retrieve, paginate and list the posts.
+It is accessible via \texttt{/posts/} route.
 
 \begin{lstlisting}[language=HTML5]
-<page-posts is="x-page">
+<dom-module id="page-posts">
+<template>
   <api-collection-get name="Posts"
     page="{{page}}" perpage="10"
-    collection="{{posts}} count="{{count}}">
+    collection="{{posts}}" count="{{count}}">
   </api-collection-get>
   <template is="dom-repeat" items="{{posts}}">
     <div>
@@ -52,16 +60,18 @@ It use \texttt{<api-collection-get>}, \texttt{<x-paginator>}, and \texttt{<x-lis
     </div>
   </template>
   <x-paginator perpage="10" total="{{count}}" 
-    current="{{page}}></x-paginator>
-</page-posts>
+    current="{{page}}"></x-paginator>
+</template>
+</dom-module>
 \end{lstlisting}
 
 \texttt{<page-post>} show a post. 
-
-It is accessible via \texttt{<x-route path="/posts/:post\_id" page="page-post"}
+It is accessible via \texttt{/posts/:post\_id} route.
+The router pass the \texttt{post\_id} parameter to the page.
 
 \begin{lstlisting}[language=HTML5]
-<page-post is="x-page">
+<dom-module id="page-post">
+<template>
   <api-model-get name="Posts" 
     model-id="{{post_id}}" model="{{post}}">
   </api-model-get>
@@ -69,5 +79,6 @@ It is accessible via \texttt{<x-route path="/posts/:post\_id" page="page-post"}
   <h2>by <span>{{post.author}}</span></h2>
   <h3>on <span>{{post.date}}</span></h3>
   <div>{{post.content}}</div>
-</page-post>
+</template>
+</dom-module>
 \end{lstlisting}

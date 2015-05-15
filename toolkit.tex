@@ -125,26 +125,12 @@ Client-side can be divided in two parts: \texttt{admin part} and \texttt{user pa
 The \emph{Admin part} is automatically generated. 
 It consists of the following pages: \texttt{<page-collections>}, \texttt{<page-collection>} and \texttt{<page-model-edit>}.
 
-\texttt{<page-collections>} is the admin main page. It shows the collections of the app. 
-
-\begin{lstlisting}[language=HTML5]
-<page-collections>
-  <ul>
-  <template items="{{collections}}">
-    <li>
-      <a is="x-link" href="/admin/{{item}}">
-        {{item}}
-      </a>
-    </li>
-  </template>
-  </ul>
-</page-collections>
-\end{lstlisting}
 
 \texttt{<page-collection>} shows the model instances of a collection.
 
 \begin{lstlisting}[language=HTML5]
-<page-collection>
+<dom-module id="page-collection">
+<template>
   <api-collection-get name="{{collection}}" 
     filter="{{filter}}"
     collection="{{list}}">
@@ -156,13 +142,15 @@ It consists of the following pages: \texttt{<page-collections>}, \texttt{<page-c
   </x-table>
   <x-paginator current="{{page}}">
   </part-paginator>
-</page-collection>
+</template>
+</dom-module>
 \end{lstlisting}
 
 \texttt{<page-model-edit>} shows the forms to update a model.
 
 \begin{lstlisting}[language=HTML5]
-<page-model-edit>
+<dom-module id="page-model-edit">
+<template>
   <api-model-get name="{{collection}}"
     model-id="model_id"
     model="{{model}}" schema="{{schema}}">
@@ -174,6 +162,7 @@ It consists of the following pages: \texttt{<page-collections>}, \texttt{<page-c
     model-id="{{model_id}}">
   </api-model-put>
 </page-model-edit>
+</dom-module>
 \end{lstlisting}
 
 The \texttt{user part} depends on the type of the Web Application that has been implemented.

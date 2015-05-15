@@ -1,70 +1,19 @@
 \section{Introduction}\label{sec:introduction}
 
+La necessità di automatizzare la scrittura del codice procedurale per la gestione delle attività più ricorrenti nella pubblicazione di contenuto on-line ha decretato fin dagli albori di internet il successo dei CMSs. Very successful exmaples are Joompla! or Worpress (which runs more than 23.3\% of the top ten million websites (as of January 2015) \cite{usage-cms}). These systems focus on testimoniano come l'approccio post/pagina sia ancora sufficiente per gestire una grossa fetta del contenuto on-line.
 
-% One generally accepted definition of Content Management System is: a system that lets you apply management principles to content.
+Nel passaggio dalla pubblicazione di contenuto all'interazione con il web è emersa la necessità di gestire all'interno delle applicazione web dati dallo schema arbitrario.
 
+To sustain this scenario, intense work and research around anatomy and operating of web applications have led to identify the operations that are identically performed by the (almost) totality of them. It is essentially the case of procedures related to user and session management, data access policies and CRUD method on basic data models.
+Software tools emerged nowadays (e.g. \href{http://keystonejs.com}{KeystoneJS} or \href{http://loopback.io}{LoopBack}) to automagically handle these operations once a description of the data type to deal with (i.e. model schemas) has been provided. This approach is perfectly suitable to speed up web applications development, mostly reling on external configuration files and less on procedural code \cite{6859693}.
 
-% It is simple to elicit an evolutionary path in the history of management systems whose milestones are identifiable in \emph{Joomla!}, \emph{Wordpress} and \emph{KeystoneJS}.
-
-% Alongside these milestones entire constellations of analogous experiences popped up, but we considered them not relevant since they borrowed main features and constitutive approaches from cited ones. 
-
-% Starting from \emph{Joomla!}, a framework that drove in the engineering into the world of web content management. Joomla! powers more than 2,7\% of the largest 1,000,000 web sites in the world \cite{usage-cms}. Anyway, nowadays, \emph{Joomla!} results unwieldy and, due to its monolithic approach, not complied to current web features.
-
-% \emph{Wordpress}, instead is used by more than 23.3\% of the top 10 million websites (as of January 2015) \cite{usage-cms}. Wordpress develop CMS’s idea, driving in the intention to use CMSs to build Web Application. Wordpress, with its plugin, aims to limber user experience. The availability of more than 37,000 plugins, because it lets to create sites to non-experts too.
-% Anyway, further customizations, other than the ones introduced by plugins, are difficult to deploy due to loosely code engeneering of this tool.
-
-% Finally, {\em KeystoneJS} stand in the last position. Minimal and agile, KeystoneJS, embody the new era of the CMS, letting the user to make his own personal web application.
-
-
-
-
-% {\em KeystoneJS} approach catches well the changin of the needs of web users, as it abandons the default page/post approch in favor of a broader and agnostic type of modellization of content data. It lets the definition of complex data model defining JSON document, and on these document automagically build ...
-
-
-
-%%% KEYSTONE 0.4
-% A working process branch shows a refactored version of the software 
-
-% che fa bene alcune cose: 
-% 1) è una SPA 
-% 2) ...
-
-% ma e qui vengono gli aspetti negaqtivi:
-
-% non implementa nessuna logica di riuso dei componenti.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-Intense work and researches around anatomy and operating of web applications have led to identify the operations that are identically performed by the (almost) totality of them. It is essentially the case of procedures related to user and session management, data access policies and CRUD method on basic data models.
-Several software tools (e.g. \href{http://keystonejs.com}{KeystoneJS} or \href{http://loopback.io}{LoopBack}) are available nowadays to automagically handle these operations once a description of the data type to deal with (i.e. model schemas) has been provided. This approach is perfectly suitable to speed up web application development, mostly reling on external configuration files and less on procedural code \cite{6859693}.
-
-Questa è solo l'ultima delle "automatizzazioni" che sono state introdotte nel corso degli anni. Da principio si è lavorato per facilitare la gestione del contenuto sul web, e diversi CMSs di successo sono stati introdotti. 
-
-
-
-
+Some of these tools also provide an auto-generated backend UI to interact with data. Operations like for example data input, are available out of the box.
 
 Il contributo principale presentato in questo articolo è costituito dalla individuazione di un processo di sviluppo web guidato dai documenti congiuntamente alla definizione di un toolkit che utilizzato come indicato di seguito permette l'effettivo utilizzo del processo identificato. Il web development cycle, è un processo definito in 4 fasi che può essere applicato ricorsivamente alle viste dell'applicazione web e a tutte le loro sottocomponenti. Il toolkit consiste di una libreria di Web Components che abilita allo sviluppo di SPA mediante la composizione (e parametrizzazione) di tags html.
 
-questo tipo di sviluppo abilita ad un riuso estremo dei componenti della UI, ma anche per quanto riguarda nel caso di modelli di diffuso E/O FREQUENTE UTILIZZO.
+Questo tipo di sviluppo abilita ad un riuso estremo dei componenti della UI, e anche di per modelli di diffuso E/O FREQUENTE UTILIZZO.
 
-
-dal momento che 
-
-
-lo sforzo di sviluppo deve concentrarsi nella definizione dei documenti che guidano lo sviluppo, ovvero lo schema dei modelli che descrivono i dati gestiti. Il toolkit fornirà quindi il supporto necessario alla gestione amministrativa dei modelli di dato definiti fornendo una interfaccia adeguata interfaccia.
-
-
-
-
-
-
-
-
-
+Lo sforzo di sviluppo deve concentrarsi nella definizione dei documenti che guidano lo sviluppo, ovvero lo schema dei modelli che descrivono i dati gestiti. Il toolkit fornirà quindi il supporto necessario alla gestione amministrativa dei modelli di dato definiti fornendo una interfaccia adeguata interfaccia. 
 
 
 The remainder of this document is organized as follows. In

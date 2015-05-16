@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.17)  15 MAY 2015 16:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.17)  16 MAY 2015 10:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -638,21 +638,20 @@ LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
 (Font)              for symbol `textbullet' on input line 255.
 
-(./introduction.tex (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-0.def
-File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
-)
-
-LaTeX Warning: Reference `sec:conclusions' on page \thepage  undefined on input
- line 71.
-
-
+(./introduction.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]) (./cycle.tex) (./architecture.tex
+]
+
+LaTeX Warning: Reference `sec:conclusions' on page \thepage  undefined on input
+ line 20.
+
+) (./cycle.tex) (./architecture.tex
 LaTeX Font Info:    Try loading font information for T1+aett on input line 3.
+
 (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
@@ -689,8 +688,8 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.46 </a
-        pi-collection-get> [2]
+l.28 <x-router>
+                [2]
 
 LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
 (Font)              using `T1/aett/m/n' instead on input line 53.
@@ -705,8 +704,8 @@ Overfull \hbox (11.02188pt too wide) in paragraph at lines 125--127
 (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.59       <h3>on 
-                  <span>{{post.date}}</span></h3> [3]
+l.39 GET|
+         POST /api/Tags [3]
 Overfull \hbox (17.76447pt too wide) in paragraph at lines 68--71
 []\T1/aett/m/n/9 <page-post> \T1/aer/m/n/9 show a post. It is ac-ces-si-ble via
  \T1/aett/m/n/9 /posts/:post_id
@@ -736,13 +735,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 272.
  ) 
 Here is how much of TeX's memory you used:
- 12141 strings out of 495028
- 172078 string characters out of 6181497
- 495945 words of memory out of 5000000
- 14954 multiletter control sequences out of 15000+600000
+ 11656 strings out of 495028
+ 167081 string characters out of 6181497
+ 477945 words of memory out of 5000000
+ 14472 multiletter control sequences out of 15000+600000
  66294 words of font info for 96 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,11n,97p,664b,1978s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,11n,97p,631b,2191s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </root/.texmf-var
 /fonts/pk/ljfour/jknappen/ec/tcrm0900.600pk></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1
@@ -757,10 +756,10 @@ xmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on x-project-paper.pdf (4 pages, 200312 bytes).
+Output written on x-project-paper.pdf (4 pages, 200809 bytes).
 PDF statistics:
- 348 PDF objects out of 1000 (max. 8388607)
- 323 compressed objects within 4 object streams
+ 351 PDF objects out of 1000 (max. 8388607)
+ 326 compressed objects within 4 object streams
  163 named destinations out of 1000 (max. 500000)
  105 words of extra memory for PDF output out of 10000 (max. 10000000)
 

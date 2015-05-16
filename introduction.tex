@@ -1,20 +1,20 @@
 \section{Introduction}\label{sec:introduction}
 
-La necessità di automatizzare la scrittura del codice procedurale per la gestione delle attività più ricorrenti nella pubblicazione di contenuto on-line ha decretato fin dagli albori di internet il successo dei CMSs. Very successful exmaples are Joompla! or Worpress (which runs more than 23.3\% of the top ten million websites (as of January 2015) \cite{usage-cms}). These systems focus on testimoniano come l'approccio post/pagina sia ancora sufficiente per gestire una grossa fetta del contenuto on-line.
+The need of automatize procedures to handle frequent activities involved in content publication on the web has set forth since Internet begining the success of Content Management Systems. Products like \href{http://www.joomla.org/}{Joompla!} or \href{https://wordpress.org/}{WordPress} (which runs more than 23.3\% of the top ten million websites (as of January 2015) \cite{usage-cms}) are representative of a whole family of very successful systems that focus on the concepts of post and page, adapting just these two concepts to accomodate any further need of the user. 
 
-Nel passaggio dalla pubblicazione di contenuto all'interazione con il web è emersa la necessità di gestire all'interno delle applicazione web dati dallo schema arbitrario.
+So emerged the need to handle arbitraty-schema data both inside a CMS or even in the more general context of web application.
 
 To sustain this scenario, intense work and research around anatomy and operating of web applications have led to identify the operations that are identically performed by the (almost) totality of them. It is essentially the case of procedures related to user and session management, data access policies and CRUD method on basic data models.
-Software tools emerged nowadays (e.g. \href{http://keystonejs.com}{KeystoneJS} or \href{http://loopback.io}{LoopBack}) to automagically handle these operations once a description of the data type to deal with (i.e. model schemas) has been provided. This approach is perfectly suitable to speed up web applications development, mostly reling on external configuration files and less on procedural code \cite{6859693}.
+%, often referred as ``backend framework'',
+Software tools emerged nowadays (e.g. \href{http://keystonejs.com}{KeystoneJS} or \href{http://loopback.io}{LoopBack}) to automagically handle these operations once a description of the data types to deal with (i.e. model schemas) have been provided. This approach is perfectly suitable to speed up web applications development, mostly reling on external configuration files and less on procedural code \cite{6859693}.
 
-Some of these tools also provide an auto-generated backend UI to interact with data. Operations like for example data input, are available out of the box.
+Some of these tools also provide an auto-generated backend UI to interact with data: admin panels for data input, are available out of the box.
 
-Il contributo principale presentato in questo articolo è costituito dalla individuazione di un processo di sviluppo web guidato dai documenti congiuntamente alla definizione di un toolkit che utilizzato come indicato di seguito permette l'effettivo utilizzo del processo identificato. Il web development cycle, è un processo definito in 4 fasi che può essere applicato ricorsivamente alle viste dell'applicazione web e a tutte le loro sottocomponenti. Il toolkit consiste di una libreria di Web Components che abilita allo sviluppo di SPA mediante la composizione (e parametrizzazione) di tags html.
+Relaing on these consideration, the main contribution of the work presented in this paper consists of the definition of a web development process driven by documents supported by a software toolkit, whose implementation and designing choices are also discussed. The web development cycle is a four-step process which can be recursively applied to all the web application views as well as to each their subcomponent. The toolkit consists of a library of Web Components which enable to realize a single page application by means of composition (and parametrization) of newly defined HTML5 tags.
 
-Questo tipo di sviluppo abilita ad un riuso estremo dei componenti della UI, e anche di per modelli di diffuso E/O FREQUENTE UTILIZZO.
+Maximum development effort should be supplied to produce the schema definition documents. Data management UIs are provided automatically by the toolkit.
 
-Lo sforzo di sviluppo deve concentrarsi nella definizione dei documenti che guidano lo sviluppo, ovvero lo schema dei modelli che descrivono i dati gestiti. Il toolkit fornirà quindi il supporto necessario alla gestione amministrativa dei modelli di dato definiti fornendo una interfaccia adeguata interfaccia. 
-
+This kind of development extremize the concept of reuse of code sice both UI components and model schema can be shared by different applications. Since the resulting code is a juxtaposition of tags, the complessive readability and maintainability of the produced code results dramaticaly increased.
 
 The remainder of this document is organized as follows. In
 Section~\ref{sec:cycle} we provide an overview of the proposed web development cyle process. Section~\ref{sec:architecture} is devoted to describe the architecture and the tecnology stack exposed by applications developed with the toolkit, while section~\ref{sec:toolkit} presents the toolkit itself. Section~\ref{sec:case-study} reports about a case-study application: it is shown how to buil a CMS by mean of the toolkit introduced in this paper. Finally, Section~\ref{sec:conclusions} proposes some conclusive remarks and future developments.

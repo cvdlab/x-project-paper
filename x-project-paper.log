@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.17)  16 MAY 2015 10:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.17)  16 MAY 2015 10:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -679,34 +679,35 @@ Overfull \hbox (4.35979pt too wide) in paragraph at lines 30--31
 []\T1/aer/m/n/9 ([]$https : / / www . polymer-[]project . org/$[]) pro-
  []
 
-) (./toolkit.tex
-
-Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 7.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
-een already used, duplicate ignored
+) (./toolkit.texpdfTeX warning (ext4): destination with the same identifier (na
+me{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.28 <x-router>
-                [2]
+l.27 
+      [2]
 
 LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 53.
+(Font)              using `T1/aett/m/n' instead on input line 29.
 
 
-Overfull \hbox (11.02188pt too wide) in paragraph at lines 125--127
-\T1/aer/m/n/9 the fol-low-ing pages: \T1/aett/m/n/9 <page-collections>\T1/aer/m
-/n/9 , \T1/aett/m/n/9 <page-collection>
+Overfull \hbox (2.25803pt too wide) in paragraph at lines 91--92
+[]\T1/aett/m/n/9 <api-filter> \T1/aer/m/n/9 gen-er-ate di-nam-i-cally (from a m
+odel schema)
+ []
+
+
+Overfull \hbox (1.18645pt too wide) in paragraph at lines 156--157
+[]\T1/aer/m/n/9 Even a page can be en-cap-su-lated in an el-e-ment. \T1/aett/m/
+n/9 x-project
  []
 
 ) (./case-study.texpdfTeX warning (ext4): destination with the same identifier 
 (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.39 GET|
-         POST /api/Tags [3]
-Overfull \hbox (17.76447pt too wide) in paragraph at lines 68--71
+l.65     page="
+               page-post"></x-route> [3]
+Overfull \hbox (17.76447pt too wide) in paragraph at lines 126--129
 []\T1/aett/m/n/9 <page-post> \T1/aer/m/n/9 show a post. It is ac-ces-si-ble via
  \T1/aett/m/n/9 /posts/:post_id
  []
@@ -724,7 +725,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 272.
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 272.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 272.
 Package rerunfilecheck Info: File `x-project-paper.out' has not changed.
-(rerunfilecheck)             Checksum: 02B31CF5D270A9A6EF7E400532865EF1;834.
+(rerunfilecheck)             Checksum: B2C0869515B247F56363F1BEA888A825;292.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -735,13 +736,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 272.
  ) 
 Here is how much of TeX's memory you used:
- 11656 strings out of 495028
- 167081 string characters out of 6181497
- 477945 words of memory out of 5000000
- 14472 multiletter control sequences out of 15000+600000
- 66294 words of font info for 96 fonts, out of 8000000 for 9000
+ 11637 strings out of 495028
+ 166702 string characters out of 6181497
+ 452945 words of memory out of 5000000
+ 14463 multiletter control sequences out of 15000+600000
+ 65158 words of font info for 95 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,11n,97p,631b,2191s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,11n,97p,631b,1978s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </root/.texmf-var
 /fonts/pk/ljfour/jknappen/ec/tcrm0900.600pk></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1
@@ -756,10 +757,10 @@ xmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on x-project-paper.pdf (4 pages, 200809 bytes).
+Output written on x-project-paper.pdf (4 pages, 200628 bytes).
 PDF statistics:
- 351 PDF objects out of 1000 (max. 8388607)
- 326 compressed objects within 4 object streams
- 163 named destinations out of 1000 (max. 500000)
- 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 318 PDF objects out of 1000 (max. 8388607)
+ 294 compressed objects within 3 object streams
+ 154 named destinations out of 1000 (max. 500000)
+ 49 words of extra memory for PDF output out of 10000 (max. 10000000)
 

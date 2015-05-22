@@ -1,29 +1,16 @@
 \section{Introduction}\label{sec:introduction}
 
-Since the beginning of Internet, the ability to create and publish content on the web has made the success of Content Management Systems. Products like \href{http://www.joomla.org/}{Joomla!} or \href{https://wordpress.org/}{WordPress}, born to handle simple website or blogs, are evolved to support web applications of any sort (e.g.  personal portfolio, on-line newspaper, on-line shopping), running as of January 2015 more than 25\% of the top ten million websites \cite{usage-cms}. This evolution has been allowed by a plugin-based architecture, where a each plugin is responsible to handle a functionality subset of the whole application.
-OFFRENDO UNA INTERFACCIA UTENTE DI CONFIGURAZIONE DI SEMPLICE ACCESSO.
+Since the beginning of Internet, the ability to create and publish content on the web has made the success of Content Management Systems. Products like \href{http://www.joomla.org/}{Joomla!} or \href{https://wordpress.org/}{WordPress}, born to handle simple website or blogs, are evolved to support web applications of any sort (e.g.  personal portfolio, on-line newspaper, on-line shopping), running as of January 2015 more than 25\% of the top ten million websites \cite{usage-cms}. This evolution has been allowed by a plugin-based architecture, where each plugin is responsible to handle a functionality subset of the whole application, presenting the user whit a simple accessible configuration interface.
 
-I CMS SONO SEMPLICI DA USARE E IN VIRTU DEI MOLTI PLUGIN REALIZZATI, EVITANO LA SCRITTURA DI CODICE. 
-TUTTAVIA I PLUGIN NON POSSONO COPRIRE TUTTE LE ESIGENZE DI CUSTOMIZZAZIONE, A MENO DI NON SCRIVERE CODICE, REALIZZANDO DI FATTO UN APPROCCIO ALLO SVILUPPO TOP DOWN: A MAGGIORE LIVELLO DI CUSTOMMIZZAZIONE CORRISPONDE UN LIVELLO DI INTERVENTO PIU BASSO.
+The large number of available plugins covers most of the common and frequently required customizations, thus avoiding to write ad-hoc code. Nevertheless, the implmentation of specific functional characteristics inevitably require to intervene at code level.
 
-LADDOVE IL LAVORO DI PERSONALIZZAZIONE DI UN CMS RISULTA TROPPO ONEROSO SI PUO OPTARE PER L'UTILIZZO DI UN WEB FRAMEWORK, UN INSIEME DI FACILITY PER LO SVILUPPATORE THAT AIMS TO ALLEVIATE THE OVERHEAD ASSOCIATE WITH COMMON DEVELOPMENT ACTIVITIES.
-IN PARTICOLARE, AL GIORNO D'OGGI LE CARATTERISTICHE DESIDERABILI SONO:
-* USER MANAGEMENT,
-* SESSION MANAGEMENT, 
-* DATA ACCESS POLICIES MANAGEMENT
-* HTTP RESTFUL APIS TO PERFORM CRUD METHODS ON DATA MODELS
+Where the effort required to add custom features to a CMS results too expensive, a web framework can be adopted instead. A web framework consists of a set of software facilities that aims to alleviate the overhead associate with common development activities. Web application coding effort, while eased by the web framework, is anyway rewarded by an increased level of extensibility and customizability of the produced application.
 
-AL FINE DI EFFECTIVELY speed up web applications development, TALI FACILITIES DOVREBBERO ESSERE FORNITE mostly reling on external configuration files and less on procedural code \cite{6859693}.
+The most desiderable features for a wab frameork are: 1) user management, 2) session management, 3) HTTP RESTfull APIs automatic generation to have CRUD methods on data models, 4) data access policies management. In order to effectively speed up web applications development, these facilities should be provided mostly reling on external configuration files and less on procedural code \cite{6859693}.
 
-IN PARTICULAR, A DOCUMENT-DRIVEN APPROCH IS SPREADING NOWADAYS ... descrizione di input/output
+The main contribution of the work presented in this paper consists of the definition of a web 4-step development process driven by documents and supported by a software toolkit, named \brand{x-project}, whose designing choices and implementation are also discussed. This approach extremize the concept of the reuse of code whose complessive readability, maintainability and extendibility result dramaticaly increased. As a case study, a prototype web framework has also been relized, which aims to syntetize the ease of use of a traditional CMS with the customizability of a modern web framework.
 
+%Each component, thought as the analogous of the plugins in the CMS realm, is vertical piece of the tecnology stack, raging from client-side to server-side, responsible to cover an entire aspect of the web application, encapsulating  all the details for that single aspect: from user experience to application logic.
 
-
-
-Relaing on these consideration, the main contribution of the work presented in this paper consists of the definition of a web development process driven by documents supported by a software toolkit, whose implementation and designing choices are also discussed. The web development cycle is a four-step process which can be recursively applied to all the web application views as well as to each their subcomponent. The toolkit consists of a library of Web Components which enable to realize a single page application by means of composition (and parametrization) of newly defined HTML5 tags.
-
-This kind of development extremize the concept of reuse of code sice both UI components and model schema can be shared by different applications. Since the resulting code is a juxtaposition of tags, the complessive readability and maintainability of the produced code results dramaticaly increased.
-
-The remainder of this document is organized as follows. In
-Section~\ref{sec:cycle} we provide an overview of the proposed web development cyle process. Section~\ref{sec:architecture} is devoted to describe the architecture and the tecnology stack exposed by applications developed with the toolkit, while section~\ref{sec:toolkit} presents the toolkit itself. Finally Section~\ref{sec:case-study} reports about a case-study application: it is shown how to buil a CMS by mean of the toolkit introduced in this paper.% Finally, Section~\ref{sec:conclusions} proposes some conclusive remarks and future developments.
+The remainder of this document is organized as follows. In Section~\ref{sec:cycle} we provide an overview of the proposed web development cyle process. Section~\ref{sec:architecture} is devoted to describe the architecture and the tecnology stack exposed by applications developed with the toolkit, while section~\ref{sec:toolkit} presents the toolkit itself. Finally Section~\ref{sec:case-study} reports about a case-study application: it is shown how to buil a CMS by mean of the toolkit introduced in this paper.% Finally, Section~\ref{sec:conclusions} proposes some conclusive remarks and future developments.
 

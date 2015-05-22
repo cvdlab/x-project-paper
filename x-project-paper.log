@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.17)  22 MAY 2015 09:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.17)  22 MAY 2015 13:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -639,47 +639,17 @@ LaTeX Font Warning: Font shape `TS1/aer/m/n' undefined
 (Font)              for symbol `textbullet' on input line 255.
 
 (./introduction.tex
-Overfull \hbox (8.80763pt too wide) in paragraph at lines 6--8
-\T1/aer/m/n/9 MOLTI PLU-GIN RE-AL-IZ-ZATI, EVI-TANO LA SCRIT-TURA
- []
-
-
-Overfull \hbox (14.16823pt too wide) in paragraph at lines 6--8
-\T1/aer/m/n/9 DI FATTO UN AP-PROC-CIO ALLO SVILUPPO TOP DOWN:
- []
-
-
-Overfull \hbox (6.17839pt too wide) in paragraph at lines 6--8
-\T1/aer/m/n/9 A MAG-GIORE LIV-ELLO DI CUS-TOM-MIZ-ZAZIONE COR-
- []
-
-
-Overfull \hbox (3.50337pt too wide) in paragraph at lines 9--15
-\T1/aer/m/n/9 UN CMS RISULTA TROPPO ONEROSO SI PUO OPTARE
- []
-
-
-Overfull \hbox (6.04443pt too wide) in paragraph at lines 9--15
-\T1/aer/m/n/9 WITH COM-MON DE-VEL-OP-MENT AC-TIV-I-TIES. IN PAR-
- []
-
-
-Overfull \hbox (2.10365pt too wide) in paragraph at lines 18--19
-[]\T1/aer/m/n/9 IN PAR-TIC-U-LAR, A DOCUMENT-DRIVEN AP-PROCH
- []
-
-
+LaTeX Font Info:    Try loading font information for T1+aett on input line 11.
+ (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aett.fd
+File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
+)
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]) (./cycle.tex) (./architecture.tex
-LaTeX Font Info:    Try loading font information for T1+aett on input line 3.
-(/usr/share/texlive/texmf-dist/tex/latex/ae/t1aett.fd
-File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
-)
-(/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
+]) (./cycle.tex) (./architecture.tex (/usr/share/texlive/texmf-dist/tex/latex/u
+cs/data/uni-32.def
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
 Overfull \hbox (6.60374pt too wide) in paragraph at lines 27--29
@@ -703,17 +673,17 @@ Overfull \hbox (4.35979pt too wide) in paragraph at lines 30--31
 []\T1/aer/m/n/9 ([]$https : / / www . polymer-[]project . org/$[]) pro-
  []
 
-) (./toolkit.texpdfTeX warning (ext4): destination with the same identifier (na
-me{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.21 
-      [2]
+) (./toolkit.tex
 
 LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
 (Font)              using `T1/aett/m/n' instead on input line 29.
 
-
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.38 \begin{lstlisting}[language=HTML5]
+                                        [2]
 Overfull \hbox (2.25803pt too wide) in paragraph at lines 91--92
 []\T1/aett/m/n/9 <api-filter> \T1/aer/m/n/9 gen-er-ate di-nam-i-cally (from a m
 odel schema)
@@ -729,8 +699,8 @@ n/9 x-project
 (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.58   <x-route 
-                route="/admin/:collection" [3]
+l.77     count="
+                {{count}}"> [3]
 Overfull \hbox (17.76447pt too wide) in paragraph at lines 126--129
 []\T1/aett/m/n/9 <page-post> \T1/aer/m/n/9 show a post. It is ac-ces-si-ble via
  \T1/aett/m/n/9 /posts/:post_id
@@ -759,11 +729,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 272.
 Here is how much of TeX's memory you used:
  11636 strings out of 495028
  166685 string characters out of 6181497
- 440945 words of memory out of 5000000
+ 465945 words of memory out of 5000000
  14462 multiletter control sequences out of 15000+600000
  65158 words of font info for 95 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,11n,97p,701b,1974s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,11n,97p,769b,1974s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </root/.texmf-var
 /fonts/pk/ljfour/jknappen/ec/tcrm0900.600pk></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1
@@ -778,10 +748,10 @@ xmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
 /times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on x-project-paper.pdf (4 pages, 200468 bytes).
+Output written on x-project-paper.pdf (4 pages, 199824 bytes).
 PDF statistics:
- 317 PDF objects out of 1000 (max. 8388607)
- 293 compressed objects within 3 object streams
+ 316 PDF objects out of 1000 (max. 8388607)
+ 292 compressed objects within 3 object streams
  154 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 

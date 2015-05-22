@@ -1,4 +1,4 @@
-\section{Web development cycle}\label{sec:cycle}
+\section{A 4-step Web development process}\label{sec:dev-proc}
 
 We model the web development process as a four-steps procedure that can be
 applyied recursively to each page (or view) of a web application as well as to
@@ -25,11 +25,11 @@ read/write capabilities on particular portion of data.
 
 {\bf 2\textsuperscript{nd} step - Model actions definion}. Since CRUD
 operation coul not be enougth to describe all the needed operation further
-actions on models can be defined and exposed via http verbs.
+actions on models can be defined and exposed as RESTful APIs via http verbs.
 
 {\bf 3\textsuperscript{rd} step - UI component definition}. Then individual UI
 component can be defined,  relying exclusively on CRUD operations and actions
-available on data models.
+available server-side on data models.
 
 {\bf 4\textsuperscript{th} step - UI component assemplation}. As last task,
 previously defined UI component  have to be mounted to define application

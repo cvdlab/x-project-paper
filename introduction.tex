@@ -1,18 +1,26 @@
 \section{Introduction}\label{sec:introduction}
 
-The need of automatize procedures to handle frequent activities involved in content publication on the web has set forth since Internet begining the success of Content Management Systems. Products like \href{http://www.joomla.org/}{Joompla!} or \href{https://wordpress.org/}{WordPress} (which runs more than 23.3\% of the top ten million websites (as of January 2015) \cite{usage-cms}) are representative of a whole family of very successful systems that focus on the concepts of post and page, adapting just these two concepts to accomodate any further need of the user. 
+Since the beginning of Internet, the ability to create and publish content on the web has made the success of Content Management Systems. Products like \href{http://www.joomla.org/}{Joomla!} or \href{https://wordpress.org/}{WordPress}, born to handle simple website or blogs, are evolved to support web applications of any sort (e.g.  personal portfolio, on-line newspaper, on-line shopping), running as of January 2015 more than 25\% of the top ten million websites \cite{usage-cms}. This evolution has been allowed by a plugin-based architecture, where a each plugin is responsible to handle a functionality subset of the whole application.
+OFFRENDO UNA INTERFACCIA UTENTE DI CONFIGURAZIONE DI SEMPLICE ACCESSO.
 
-So emerged the need to handle arbitraty-schema data both inside a CMS or even in the more general context of web application.
+I CMS SONO SEMPLICI DA USARE E IN VIRTU DEI MOLTI PLUGIN REALIZZATI, EVITANO LA SCRITTURA DI CODICE. 
+TUTTAVIA I PLUGIN NON POSSONO COPRIRE TUTTE LE ESIGENZE DI CUSTOMIZZAZIONE, A MENO DI NON SCRIVERE CODICE, REALIZZANDO DI FATTO UN APPROCCIO ALLO SVILUPPO TOP DOWN: A MAGGIORE LIVELLO DI CUSTOMMIZZAZIONE CORRISPONDE UN LIVELLO DI INTERVENTO PIU BASSO.
 
-To sustain this scenario, intense work and research around anatomy and operating of web applications have led to identify the operations that are identically performed by the (almost) totality of them. It is essentially the case of procedures related to user and session management, data access policies and CRUD method on basic data models.
-%, often referred as ``backend framework'',
-Software tools emerged nowadays (e.g. \href{http://keystonejs.com}{KeystoneJS} or \href{http://loopback.io}{LoopBack}) to automagically handle these operations once a description of the data types to deal with (i.e. model schemas) have been provided. This approach is perfectly suitable to speed up web applications development, mostly reling on external configuration files and less on procedural code \cite{6859693}.
+LADDOVE IL LAVORO DI PERSONALIZZAZIONE DI UN CMS RISULTA TROPPO ONEROSO SI PUO OPTARE PER L'UTILIZZO DI UN WEB FRAMEWORK, UN INSIEME DI FACILITY PER LO SVILUPPATORE THAT AIMS TO ALLEVIATE THE OVERHEAD ASSOCIATE WITH COMMON DEVELOPMENT ACTIVITIES.
+IN PARTICOLARE, AL GIORNO D'OGGI LE CARATTERISTICHE DESIDERABILI SONO:
+* USER MANAGEMENT,
+* SESSION MANAGEMENT, 
+* DATA ACCESS POLICIES MANAGEMENT
+* HTTP RESTFUL APIS TO PERFORM CRUD METHODS ON DATA MODELS
 
-Some of these tools also provide an auto-generated backend UI to interact with data: admin panels for data input, are available out of the box.
+AL FINE DI EFFECTIVELY speed up web applications development, TALI FACILITIES DOVREBBERO ESSERE FORNITE mostly reling on external configuration files and less on procedural code \cite{6859693}.
+
+IN PARTICULAR, A DOCUMENT-DRIVEN APPROCH IS SPREADING NOWADAYS ... descrizione di input/output
+
+
+
 
 Relaing on these consideration, the main contribution of the work presented in this paper consists of the definition of a web development process driven by documents supported by a software toolkit, whose implementation and designing choices are also discussed. The web development cycle is a four-step process which can be recursively applied to all the web application views as well as to each their subcomponent. The toolkit consists of a library of Web Components which enable to realize a single page application by means of composition (and parametrization) of newly defined HTML5 tags.
-
-Maximum development effort should be supplied to produce the schema definition documents. Data management UIs are provided automatically by the toolkit.
 
 This kind of development extremize the concept of reuse of code sice both UI components and model schema can be shared by different applications. Since the resulting code is a juxtaposition of tags, the complessive readability and maintainability of the produced code results dramaticaly increased.
 

@@ -12,11 +12,9 @@ For a blog platform the essential entities to model are: \texttt{Post} and \text
     "content": { "type": "text" },
     "permalink": { "type": "string" }
   }, 
-  "relations": [{
-    "name": "tags", 
-    "type": "has_many", 
-    "model": "Tag"
-  }]
+  "relations": {
+    "tags": { "type": "has_many", "model": "Tag"}
+  }
 }
 \end{lstlisting}
 
@@ -41,28 +39,16 @@ GET|PUT|DELETE /api/Tags/:tag_id
 Since a snippet is worth a thousand words, in the following we present the pages of the app.
 It's important to note how easily a page can be built without writing code but assembling elements. 
 
-\vspace{0.2cm}
-
-\texttt{index.html} imports the pages and set the router.
-\texttt{<page-collection>} and \texttt{<page-model-edit>} are provided by the toolkit.
-
-%\begin{lstlisting}[language=HTML5]
-%<link rel="import" href="page-collection.html">
-%<link rel="import" href="page-model-edit.html">
-%<link rel="import" href="page-posts.html">
-%<link rel="import" href="page-post.html">
-%\end{lstlisting}
+\paragraph{Admin part}
 
 \begin{lstlisting}[language=HTML5]
 <x-router>
-  <x-route route="/admin/:collection" 
-    page="page-collection"></x-route>
-  <x-route route="/admin/:collection/:model_id"
-    page="page-model-edit"></x-route>
-  <x-route route="/" 
-    page="page-posts"></x-route>
-  <x-route route="posts/:id" 
-    page="page-post"></x-route>
+  <x-route 
+    route="/admin/:collection" 
+    page="page-collection" />
+  <x-route 
+    route="/admin/:collection/:id"
+    page="page-model-edit" />
 </x-router>
 \end{lstlisting}
 
@@ -70,20 +56,26 @@ It's important to note how easily a page can be built without writing code but a
 
 \begin{lstlisting}[language=HTML5]
 <template name="page-collection">
-  <api-collection-get name="{{name}}" 
-    where="{{filter}}" 
-    page="{{page}}" perpage="{{perpage}}"  
-    items="{{items}}" schema="{{schema}}"
-    count="{{count}}">
-  </api-collection-get>
-  <api-filter schema="{{schema}}"
-    filter="{{filter}}"></api-filter>
-  <x-table schema="schema" editable
-    items="{{items}}"></x-table>
-  <x-pager count="{{count}}" perpage="{{perpage}}"
-    current="{{page}}"></x-pager>
+  <api-collection-schema
+    name="{collection}"
+    schema="{schema}" />
+  <api-collection-get 
+    name="{collection}" where="{where}" 
+    page="{page}" perpage="{perpage}"  
+    items="{items}" count="{count}" />
+  <api-collection-where 
+    schema="{schema}"
+    where="{where}" />
+  <x-table 
+    schema="{schema}"
+    items="{items}" />
+  <x-pager 
+    count="{count}" perpage="{perpage}"
+    current="{page}" />
 </template>
 \end{lstlisting}
+
+
 
 \vspace{0.2cm}
 
@@ -91,35 +83,46 @@ It's important to note how easily a page can be built without writing code but a
 
 \begin{lstlisting}[language=HTML5]
 <template name="page-model-edit">
-  <api-model-get name="{{collection}}"
-    model-id="model_id"
-    model="{{model}}" schema="{{schema}}">
-  </api-model-get>
-  <x-form schema="{{schema}}" 
-    model="{{model}}"></x-form>
-  <api-model-put name="{{collection}}"
-    model-id="{{model_id}}"></api-model-put>
+  <api-collection-schema
+    collection="{collection}"
+    schema="{schema}" />
+  <api-model-get 
+    name="{collection}" model-id="{id}"
+    model="{model}" />
+  <x-form 
+    schema="{schema}" 
+    model="{model}" />
+  <api-model-put 
+    name="{collection}"
+    model-id="{model_id}" />
 </template>
 \end{lstlisting}
 
-\vspace{0.2cm}
+\paragraph{User part}
+
+\begin{lstlisting}[language=HTML5]
+<x-router>
+  <x-route route="/" page="page-posts" />
+  <x-route route="posts/:id" page="page-post" />
+</x-router>
+\end{lstlisting}
 
 \texttt{<page-posts>} show the list of posts.
 
 \begin{lstlisting}[language=HTML5]
 <template name="page-posts">
-  <api-collection-get name="Posts"
-    page="{{page}}" perpage="10"
-    collection="{{posts}}" count="{{count}}">
-  </api-collection-get>
-  <template is="dom-repeat" items="{{posts}}">
-    <div>
-      <h1>{{item.title}}</h1>
-      <h3>{{item.posted}}</h3>
-    <div>
+  <api-collection-get 
+    name="Posts"
+    perpage="10" page="{page}" 
+    items="{posts}" count="{count}" />
+
+  <template is="dom-repeat" items="{posts}">
+    <li>{item.title} {item.posted}</li>
   </template>
-  <x-pager perpage="10" total="{{count}}" 
-    current="{{page}}"></x-pager>
+
+  <x-pager 
+    perpage="10" total="{count}" 
+    current="{page}" />
 </template>
 \end{lstlisting}
 
@@ -129,15 +132,14 @@ The \texttt{post\_id} parameter is picked from the url by the router and passed 
 
 \begin{lstlisting}[language=HTML5]
 <template name="page-post">
-  <api-model-get name="Posts" 
-    model-id="{{post_id}}" model="{{post}}">
-  </api-model-get>
-  <div>
-    <h1>{{post.title}}</h1>
-    <h2>by <span>{{post.author}}</span></h2>
-    <h3>on <span>{{post.date}}</span></h3>
-  </div>
-  <div>{{post.content}}</div>
+  <api-model-get 
+    name="Posts" model-id="{id}" 
+    model="{post}" />
+
+  <h1>{post.title}</h1>
+  <h2>by {post.author}</h2>
+  <h3>on {post.date}</h3>
+  <div>{post.content}</div>
 </template>
 \end{lstlisting}
 

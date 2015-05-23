@@ -1,16 +1,4 @@
-\begin{thebibliography}{10}
-
-\bibitem{Heineman:2001:CSE:379381}
-G.~T. Heineman and W.~T. Councill, editors.
-\newblock {\em Component-based Software Engineering: Putting the Pieces
-  Together}.
-\newblock Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 2001.
-
-\bibitem{5552271}
-M.~Nath and A.~Arora.
-\newblock Content management system : Comparative case study.
-\newblock In {\em Software Engineering and Service Sciences (ICSESS), 2010 IEEE
-  International Conference on}, pages 624--627, July 2010.
+\begin{thebibliography}{1}
 
 \bibitem{6859693}
 V.~Okanovic.
@@ -26,18 +14,6 @@ A.~Osmani and E.~Bidelman.
   \url{https://github.com/PolymerElements/iron-elements}}, 2015.
 \newblock [Online; accessed 15-May-2015].
 
-\bibitem{6169111}
-S.~Patel, V.~Rathod, and S.~Parikh.
-\newblock Joomla, drupal and wordpress - a statistical comparison of open
-  source cms.
-\newblock In {\em Trendz in Information Sciences and Computing (TISC), 2011 3rd
-  International Conference on}, pages 182--187, Dec 2011.
-
-\bibitem{914739}
-A.~Repenning, A.~Ioannidou, M.~Payton, W.~Ye, and J.~Roschelle.
-\newblock Using components for rapid distributed software development.
-\newblock {\em Software, IEEE}, 18(2):38--45, Mar 2001.
-
 \bibitem{webcomponents-polyfills}
 Z.~Rocha.
 \newblock Web components polyfills.
@@ -45,36 +21,17 @@ Z.~Rocha.
   2015.
 \newblock [Online; accessed 15-May-2015].
 
-\bibitem{custom-elements}
-W3C.
-\newblock Custom elements.
-\newblock \textit{Available at \url{http://www.w3.org/TR/custom-elements/}},
-  2014.
-\newblock [Online; accessed 15-May-2015].
-
-\bibitem{html-imports}
-W3C.
-\newblock Html imports.
-\newblock \textit{Available at \url{http://www.w3.org/TR/html-imports/}}, 2014.
-\newblock [Online; accessed 15-May-2015].
-
-\bibitem{html-templates}
-W3C.
-\newblock Html templates.
-\newblock \textit{Available at \url{http://www.w3.org/TR/html-templates/}},
-  2014.
-\newblock [Online; accessed 15-May-2015].
-
-\bibitem{shadow-dom}
-W3C.
-\newblock Shadow dom.
-\newblock \textit{Available at \url{http://www.w3.org/TR/shadow-dom/}}, 2014.
-\newblock [Online; accessed 15-May-2015].
-
 \bibitem{css-flexbox}
 W3C.
 \newblock Css flexbox.
 \newblock \textit{Available at \url{http://www.w3.org/TR/css3-flexbox/}}, 2015.
+\newblock [Online; accessed 15-May-2015].
+
+\bibitem{w3c}
+W3C.
+\newblock Web components specs.
+\newblock \textit{Available at \url{https://github.com/w3c/webcomponents}},
+  2015.
 \newblock [Online; accessed 15-May-2015].
 
 \bibitem{usage-cms}
@@ -84,12 +41,5 @@ W3Techs.
   \url{http://w3techs.com/technologies/overview/content_management/all/}},
   2015.
 \newblock [Online; accessed 15-May-2015].
-
-\bibitem{4773208}
-L.~Wu, R.~De~Matta, and T.~Lowe.
-\newblock Updating a modular product: How to set time to market and component
-  quality.
-\newblock {\em Engineering Management, IEEE Transactions on}, 56(2):298--311,
-  May 2009.
 
 \end{thebibliography}

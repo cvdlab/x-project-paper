@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.14)  23 MAY 2015 09:54
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.17)  24 MAY 2015 16:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -683,8 +683,8 @@ n/9 x-project
 (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.71     items="
-                {items}" /> [3]
+l.64     page="
+               {page}" perpage="{perpage}" [3]
 Overfull \hbox (17.76447pt too wide) in paragraph at lines 129--132
 []\T1/aett/m/n/9 <page-post> \T1/aer/m/n/9 show a post. It is ac-ces-si-ble via
  \T1/aett/m/n/9 /posts/:post_id
@@ -711,30 +711,32 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 265.
  ) 
 Here is how much of TeX's memory you used:
- 11629 strings out of 495028
- 166545 string characters out of 6181497
- 414724 words of memory out of 5000000
- 14442 multiletter control sequences out of 15000+600000
- 65640 words of font info for 94 fonts, out of 8000000 for 9000
+ 11636 strings out of 495028
+ 166592 string characters out of 6181497
+ 400724 words of memory out of 5000000
+ 14443 multiletter control sequences out of 15000+600000
+ 68447 words of font info for 99 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  53i,11n,97p,769b,1971s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </root/.texmf-var
 /fonts/pk/ljfour/jknappen/ec/tcrm0900.600pk></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmbx9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
-y9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
-utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on x-project-paper.pdf (4 pages, 189175 bytes).
+/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
+tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on x-project-paper.pdf (4 pages, 209283 bytes).
 PDF statistics:
- 320 PDF objects out of 1000 (max. 8388607)
- 297 compressed objects within 3 object streams
- 168 named destinations out of 1000 (max. 500000)
+ 332 PDF objects out of 1000 (max. 8388607)
+ 306 compressed objects within 4 object streams
+ 169 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 

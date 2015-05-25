@@ -46,11 +46,9 @@ These pages are accessible via the following routes.
 
 \begin{lstlisting}[language=HTML5]
 <x-router>
-  <x-route 
-    route="/admin/:collection" 
+  <x-route route="/admin/:collection" 
     page="page-collection" />
-  <x-route 
-    route="/admin/:collection/:id"
+  <x-route route="/admin/:collection/:id"
     page="page-model-edit" />
 </x-router>
 \end{lstlisting}
@@ -66,21 +64,16 @@ These params are set as attributes of the page element.
 
 \begin{lstlisting}[language=HTML5]
 <template name="page-collection">
-  <api-collection-schema
-    name="{collection}"
+  <api-collection-schema name="{collection}"
     schema="{schema}" />
   <api-collection-get 
     name="{collection}" where="{where}" 
     page="{page}" perpage="{perpage}"  
     items="{items}" count="{count}" />
-  <api-collection-where 
-    schema="{schema}"
+  <api-collection-where schema="{schema}"
     where="{where}" />
-  <x-table 
-    schema="{schema}"
-    items="{items}" />
-  <x-pager 
-    count="{count}" perpage="{perpage}"
+  <x-table schema="{schema}" items="{items}" />
+  <x-pager count="{count}" perpage="{perpage}"
     current="{page}" />
 </template>
 \end{lstlisting}
@@ -100,20 +93,19 @@ every time the user (the admin) interacts with the pagination (\texttt{<x-pager>
 
 \begin{lstlisting}[language=HTML5]
 <template name="page-model-edit">
-  <api-collection-schema
-    collection="{collection}"
+  <api-collection-schema name="{collection}"
     schema="{schema}" />
-  <api-model-get 
-    name="{collection}" model-id="{id}"
-    model="{model}" />
-  <x-form 
-    schema="{schema}" 
-    model="{model}" />
-  <api-model-put 
-    name="{collection}"
-    model-id="{model_id}" />
+  <api-model-get name="{collection}" 
+    model-id="{id}" model="{model}" />
+  <x-form schema="{schema}" model="{model}" />
+  <api-model-put  name="{collection}"
+    model-id="{model_id}" model="{model}" />
 </template>
 \end{lstlisting}
+
+Where: 
+the value \texttt{schema} is the output of \texttt{<api-collection-schema>} and the input of \texttt{<x-form>};
+the value \texttt{model} is the output of \texttt{<api-model-get>} and \texttt{<x-form>} and the input of \texttt{<api-model-put>}.
 
 \paragraph{User part}
 
@@ -130,29 +122,28 @@ The user part is essentially composed by two pages: \texttt{page-posts} and \tex
 
 \begin{lstlisting}[language=HTML5]
 <template name="page-posts">
-  <api-collection-get 
-    name="Posts"
+  <api-collection-get name="Posts"
     perpage="10" page="{page}" 
     items="{posts}" count="{count}" />
-
   <template is="dom-repeat" items="{posts}">
-    <li>{item.title} {item.posted}</li>
+    <li>{item.title} {item.date}</li>
   </template>
-
-  <x-pager 
-    perpage="10" total="{count}" 
+  <x-pager perpage="10" total="{count}" 
     current="{page}" />
 </template>
 \end{lstlisting}
+
+Where:
+the value \texttt{posts} is the output of \texttt{api-collection-get} and the input of the \texttt{<template>} iterator; for each \texttt{item} in \texttt{posts}, a list item with the post info (\texttt{title} and publishing \texttt{date}) is printed.
+
+\vspace{0.2cm}
 
 \texttt{<page-post>} shows a post. 
 
 \begin{lstlisting}[language=HTML5]
 <template name="page-post">
-  <api-model-get 
-    name="Posts" model-id="{id}" 
+  <api-model-get name="Posts" model-id="{id}" 
     model="{post}" />
-
   <h1>{post.title}</h1>
   <h2>by {post.author}</h2>
   <h3>on {post.date}</h3>
@@ -160,3 +151,5 @@ The user part is essentially composed by two pages: \texttt{page-posts} and \tex
 </template>
 \end{lstlisting}
 
+Where: once \texttt{<api-model-get>} has fetched the \texttt{post} (identified by \texttt{id}),
+\texttt{title}, \texttt{author}, \texttt{date} and \texttt{content} of the \texttt{post} will be shown.

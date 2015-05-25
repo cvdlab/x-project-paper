@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: x-project-paper.aux
 The style file: abbrv.bst
 Database file #1: x-project-paper.bib
-You've used 6 entries,
+You've used 5 entries,
             2118 wiz_defined-function locations,
-            522 strings with 4523 characters,
-and the built_in function-call counts, 1548 in all, are:
-= -- 154
-> -- 48
+            519 strings with 4439 characters,
+and the built_in function-call counts, 1331 in all, are:
+= -- 132
+> -- 41
 < -- 1
-+ -- 20
-- -- 14
-* -- 57
-:= -- 254
-add.period$ -- 23
-call.type$ -- 6
-change.case$ -- 25
++ -- 17
+- -- 12
+* -- 51
+:= -- 217
+add.period$ -- 19
+call.type$ -- 5
+change.case$ -- 21
 chr.to.int$ -- 0
-cite$ -- 6
-duplicate$ -- 58
-empty$ -- 152
-format.name$ -- 14
-if$ -- 347
+cite$ -- 5
+duplicate$ -- 51
+empty$ -- 130
+format.name$ -- 12
+if$ -- 299
 int.to.chr$ -- 0
-int.to.str$ -- 6
+int.to.str$ -- 5
 missing$ -- 1
-newline$ -- 38
-num.names$ -- 12
-pop$ -- 48
+newline$ -- 32
+num.names$ -- 10
+pop$ -- 40
 preamble$ -- 1
-purify$ -- 19
+purify$ -- 16
 quote$ -- 0
-skip$ -- 51
+skip$ -- 45
 stack$ -- 0
-substring$ -- 58
-swap$ -- 16
+substring$ -- 53
+swap$ -- 15
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
+type$ -- 20
 warning$ -- 0
-while$ -- 14
-width$ -- 7
-write$ -- 73
+while$ -- 12
+width$ -- 6
+write$ -- 61

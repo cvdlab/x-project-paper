@@ -10,10 +10,10 @@ On the server-side, an \brand{x-project} app is based on:
 \itemsep1pt\parskip0pt\parsep0pt
 \item[StrongLoop LoopBack] generates model’s API from the models schemas, to let CRUD operations on models.
 These schemas are JSON documents. Each document represents a model and presents the following fields: the \texttt{name} of the model, the set of \texttt{properties}, the list of \texttt{relations} to others models and the list of \texttt{ACL} (Access Control Layer) rules. 
-The API can be extended: the developer can add remote functions to models or add hooks to existing APIs to add behaviour before and/or after the API handler (to preprocess the request and/or postprocess the response). 
+The API can be extended: the developer can add remote functions to models or add hooks to existing API to add custom behaviour before and/or after the API handler (to preprocess the request and/or postprocess the response). 
 The resulting API is RESTful, cookie free, signed by authentication token.
 By default, applications have a built-in model that represent a user, with properties \texttt{username}, \texttt{email} and \texttt{password} for login and the property \texttt{role} used by the ACL module.
-A very remarkable feature exposed by {\em Loopback} is that it abstracts from the particular DBMS utilized by the mean of an indirection layer, allowing to choose the preferred one, be it a noSQL or a graph-based one.
+{\em Loopback} also introduces an indirection layer that allows to choose among (almost) any particular DBMS to use.
 \end{description}
 
 \paragraph{Client side}
@@ -28,15 +28,15 @@ On the client-side, an \brand{x-project} app is based on:
 \emph{HTML Templates} to define blocks of markup with the ability to inject dynamic content into;
 \emph{Shadow DOM} to scope markup and styles in a separate DOM tree;
 \emph{HTML Imports} to include and reuse HTML documents in other HTML documents.
-Each of these pieces is useful individually. But when combined, this whole package gives you:
+Each of these pieces is useful individually. But when combined, this whole package offers:
 \emph{Composability}, being able to create whole sites and apps by putting different elements together;
 \emph{Encapsulation}, isolating markup, style, and behavior logic so they don’t leak into the rest of the page;
 \emph{Reusability}, extending existing elements to create new elements, allowing to stop reinventing the wheel.
-That means we can finally fill any gaps in the platform in a meaningful way. Which also opens an opportunity for a less fragmented ecosystem, where components can truly interoperate with each other.
+This brings a less fragmented ecosystem, where components can truly interoperate with each other.
 Since these specifications are currently W3C Working Draft, they aren’t fully supported across all major browsers. \texttt{webcomponents.js} is a set of polyfills built on top of the Web Components specifications. 
 As these technologies are implemented in browsers, the polyfills will shrink to gain the benefits of native implementations \cite{webcomponents-polyfills}. 
         
-\item[Polymer library] (\url{https://www.polymer-project.org/}) provides a thin layer of API on top of Web Components and several powerful features, such as custom events and delegation, mixins, accessors and component lifecycle functions, that makes it easier and faster to create Web Components. 
+\item[Polymer library] (\url{https://www.polymer-project.org/}) provides a thin layer of API on top of Web Components and several powerful features, such as custom events and delegation, mixins, accessors and component lifecycle functions, to facilitate the creation of Web Components. 
 %Similar to \emph{Polymer} are \emph{x-tag} and \emph{Bosonic}. 
 %Web repositories \url{http://component.kitchen} and \url{http://customelements.io} already counts thousands of open source user-contributed custom elements.
 \end{description}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.17)  25 MAY 2015 10:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.17)  25 MAY 2015 13:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -667,8 +667,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.74 
+l.72 
       [2]
+Overfull \hbox (9.90793pt too wide) in paragraph at lines 133--134
+[]\T1/aett/m/n/9 <x-form> \T1/aer/m/n/9 di-nam-i-cally gen-er-ates a form from 
+a model schema,
+ []
+
+
 Overfull \hbox (1.18645pt too wide) in paragraph at lines 176--177
 []\T1/aer/m/n/9 Even a page can be en-cap-su-lated in an el-e-ment. \T1/aett/m/
 n/9 x-project
@@ -684,8 +690,14 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.78     where="
-                {where}" /> [3]) (./dev-proc.tex) (./x-project-paper.bbl)
+l.72   <api-collection-get
+                           [3]
+Overfull \hbox (6.42442pt too wide) in paragraph at lines 88--96
+\T1/aer/m/n/9 out-put of \T1/aett/m/n/9 <api-collection-get> \T1/aer/m/n/9 and 
+the in-put of \T1/aett/m/n/9 <x-table>\T1/aer/m/n/9 ;
+ []
+
+) (./dev-proc.tex) (./x-project-paper.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 265.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
@@ -703,16 +715,19 @@ Package rerunfilecheck Info: File `x-project-paper.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 265.
  ) 
 Here is how much of TeX's memory you used:
- 11636 strings out of 495028
- 166592 string characters out of 6181497
- 410724 words of memory out of 5000000
+ 11635 strings out of 495028
+ 166576 string characters out of 6181497
+ 396724 words of memory out of 5000000
  14443 multiletter control sequences out of 15000+600000
  68447 words of font info for 99 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,11n,97p,784b,1971s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,11n,97p,788b,1971s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </root/.texmf-var
 /fonts/pk/ljfour/jknappen/ec/tcrm0900.600pk></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1
@@ -728,10 +743,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist
 /urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on x-project-paper.pdf (4 pages, 209882 bytes).
+Output written on x-project-paper.pdf (4 pages, 208513 bytes).
 PDF statistics:
- 332 PDF objects out of 1000 (max. 8388607)
- 306 compressed objects within 4 object streams
- 169 named destinations out of 1000 (max. 500000)
+ 329 PDF objects out of 1000 (max. 8388607)
+ 303 compressed objects within 4 object streams
+ 168 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 

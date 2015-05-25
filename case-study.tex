@@ -41,6 +41,9 @@ It's important to note how easily a page can be built without writing code but a
 
 \paragraph{Admin part}
 
+Tha admin part is composed by two pages: \texttt{page-collection} and \texttt{page-model-edit}.
+These pages are provided by the \brand{x-project} toolkit, and are served via the following routes.
+
 \begin{lstlisting}[language=HTML5]
 <x-router>
   <x-route 
@@ -52,7 +55,14 @@ It's important to note how easily a page can be built without writing code but a
 </x-router>
 \end{lstlisting}
 
-\texttt{<page-collection>} shows models of a collection.
+Where:
+the param \texttt{:collection} is the name of the collection to inspect;
+the param \texttt{:id} is the id of the model to edit.
+These params are set as attributes of the page element.
+
+\vspace{0.2cm}
+
+\texttt{<page-collection>} shows the models of a collection.
 
 \begin{lstlisting}[language=HTML5]
 <template name="page-collection">
@@ -75,7 +85,14 @@ It's important to note how easily a page can be built without writing code but a
 </template>
 \end{lstlisting}
 
-
+We note that: 
+the value \texttt{collection} is picked from the url, via the parameter \texttt{:collection};
+the value \texttt{schema} is the output of \texttt{<api-collection-schema>} and the input of \texttt{<api-collection-get>} and \texttt{x-table};
+the value \texttt{items} is the output of \texttt{<api-collection-get>} and the input of \texttt{x-table};
+the value \texttt{where} is the output of \texttt{<api-collection-where>} and the input of \texttt{<api-collection-get>};
+the value \texttt{count} is the output of \texttt{<api-collection-get>} and the input of \texttt{<x-pager>};
+the values \texttt{perpage} and \texttt{page} are the output of \texttt{<x-pager>} and the input of \texttt{<api-collection-get>};
+every time the user (the admin) interact with the pagination (\texttt{<x-pager>}) or the advanced search options (\texttt{<api-collection-where>}), \texttt{<api-collection-get>} regenerate the request to get the list.
 
 \vspace{0.2cm}
 
@@ -99,6 +116,8 @@ It's important to note how easily a page can be built without writing code but a
 \end{lstlisting}
 
 \paragraph{User part}
+
+The user part is composed by two pages: \texttt{page-posts} and \texttt{page-post}.
 
 \begin{lstlisting}[language=HTML5]
 <x-router>
@@ -127,8 +146,6 @@ It's important to note how easily a page can be built without writing code but a
 \end{lstlisting}
 
 \texttt{<page-post>} show a post. 
-It is accessible via \texttt{/posts/:post\_id} route.
-The \texttt{post\_id} parameter is picked from the url by the router and passed to the page.
 
 \begin{lstlisting}[language=HTML5]
 <template name="page-post">

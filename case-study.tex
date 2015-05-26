@@ -99,13 +99,18 @@ every time the user (the admin) interacts with the pagination (\texttt{<x-pager>
     model-id="{id}" model="{model}" />
   <x-form schema="{schema}" model="{model}" />
   <api-model-put  name="{collection}"
-    model-id="{model_id}" model="{model}" />
+    model-id="{id}" model="{model}" />
 </template>
 \end{lstlisting}
 
 Where: 
 the value \texttt{schema} is the output of \texttt{<api-collection-schema>} and the input of \texttt{<x-form>};
 the value \texttt{model} is the output of \texttt{<api-model-get>} and \texttt{<x-form>} and the input of \texttt{<api-model-put>}.
+Once the page is ready (initialized and served by the local router): 
+\texttt{<api-collection-schema>} fetch the \texttt{schema}; 
+\texttt{<api-model-get>} fetch the model (a post or a tag) identified by \texttt{id};
+\texttt{<x-form>} shows the form to edit the model.
+When the model changes (is updated via the form) \texttt{<api-model-put>} send a request to the server to update the database (via the corresponding HTTP RESTful API).
 
 \paragraph{User part}
 
@@ -134,7 +139,8 @@ The user part is essentially composed by two pages: \texttt{page-posts} and \tex
 \end{lstlisting}
 
 Where:
-the value \texttt{posts} is the output of \texttt{api-collection-get} and the input of the \texttt{<template>} iterator; for each \texttt{item} in \texttt{posts}, a list item with the post info (\texttt{title} and publishing \texttt{date}) is printed.
+the value \texttt{posts} is the output of \texttt{<api-collection-get>} and the input of the \texttt{<template>} iterator; for each \texttt{item} in \texttt{posts}, a list item with the post info (\texttt{title} and publishing \texttt{date}) is printed;
+\texttt{<x-pager>} component is the same used in the page \texttt{<page-collection>}.
 
 \vspace{0.2cm}
 
@@ -151,5 +157,7 @@ the value \texttt{posts} is the output of \texttt{api-collection-get} and the in
 </template>
 \end{lstlisting}
 
-Where: once \texttt{<api-model-get>} has fetched the \texttt{post} (identified by \texttt{id}),
+Where:
+the value \texttt{post} is the output of \texttt{<api-model-get>} and it is used to compose the page.
+Once \texttt{<api-model-get>} has fetched the \texttt{post} (identified by \texttt{id}),
 \texttt{title}, \texttt{author}, \texttt{date} and \texttt{content} of the \texttt{post} will be shown.

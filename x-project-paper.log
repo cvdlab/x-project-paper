@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.17)  26 MAY 2015 12:50
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.14)  26 MAY 2015 12:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -520,7 +520,7 @@ File: lstlang1.sty 2013/08/26 1.5b listings language file
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
 )
-No file x-project-paper.aux.
+(./x-project-paper.aux)
 \openout1 = `x-project-paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 132.
@@ -540,12 +540,11 @@ LaTeX Font Info:    ... okay on input line 132.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 132.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 132.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 132.
-
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count132
 \scratchdimen=\dimen140
@@ -656,34 +655,10 @@ Overfull \hbox (3.29094pt too wide) in paragraph at lines 236--237
  []
 
 (./introduction.tex
-
-LaTeX Warning: Citation `usage-cms' on page \thepage  undefined on input line 3
-.
-
-
-LaTeX Warning: Citation `6859693' on page \thepage  undefined on input line 9.
-
-
 Overfull \hbox (1.14153pt too wide) in paragraph at lines 13--14
 \T1/aer/m/n/9 frame-work im-plic-itly de-fines a document-driven de-vel-op-ment
 
  []
-
-
-LaTeX Warning: Reference `sec:architecture' on page \thepage  undefined on inpu
-t line 15.
-
-
-LaTeX Warning: Reference `sec:toolkit' on page \thepage  undefined on input lin
-e 15.
-
-
-LaTeX Warning: Reference `sec:case-study' on page \thepage  undefined on input 
-line 15.
-
-
-LaTeX Warning: Reference `sec:dev-proc' on page \thepage  undefined on input li
-ne 15.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -695,13 +670,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Overfull \hbox (9.41234pt too wide) in paragraph at lines 11--17
 []\T1/aer/m/n/9 generates model API from the mod-
  []
-
-
-LaTeX Warning: Citation `w3c' on page \thepage  undefined on input line 26.
-
-
-LaTeX Warning: Citation `webcomponents-polyfills' on page \thepage  undefined o
-n input line 37.
 
 
 Overfull \hbox (4.35979pt too wide) in paragraph at lines 39--42
@@ -729,10 +697,6 @@ Overfull \hbox (12.22093pt too wide) in paragraph at lines 133--134
 []\T1/aett/m/n/9 <x-form> \T1/aer/m/n/9 dy-nam-i-cally gen-er-ates a form from 
 a model schema,
  []
-
-
-LaTeX Warning: Citation `iron-elements' on page \thepage  undefined on input li
-ne 172.
 
 
 Overfull \hbox (1.18645pt too wide) in paragraph at lines 176--177
@@ -787,17 +751,11 @@ Package rerunfilecheck Info: File `x-project-paper.out' has not changed.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 253.
  ) 
 Here is how much of TeX's memory you used:
- 11362 strings out of 495028
- 163333 string characters out of 6181497
+ 11364 strings out of 495028
+ 163373 string characters out of 6181497
  400724 words of memory out of 5000000
  14193 multiletter control sequences out of 15000+600000
  68447 words of font info for 99 fonts, out of 8000000 for 9000
@@ -818,10 +776,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist
 /urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on x-project-paper.pdf (4 pages, 208715 bytes).
+Output written on x-project-paper.pdf (4 pages, 208729 bytes).
 PDF statistics:
- 298 PDF objects out of 1000 (max. 8388607)
- 273 compressed objects within 3 object streams
+ 307 PDF objects out of 1000 (max. 8388607)
+ 282 compressed objects within 3 object streams
  150 named destinations out of 1000 (max. 500000)
  49 words of extra memory for PDF output out of 10000 (max. 10000000)
 

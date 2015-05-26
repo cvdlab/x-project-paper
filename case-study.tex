@@ -56,9 +56,9 @@ These pages are accessible via the following routes.
 \end{lstlisting}
 
 Where:
-the param \texttt{:collection} is the name of the collection to inspect;
-the param \texttt{:id} is the id of the model to edit.
-These params are set as attributes of the page element.
+the parameter \texttt{:collection} is the name of the collection to inspect;
+the parameter \texttt{:id} is the id of the model to edit.
+These parameters are set as attributes of the page element.
 
 \vspace{0.2cm}
 
@@ -92,7 +92,7 @@ the value \texttt{items} is the output of \texttt{<api-collection-get>} and the 
 the value \texttt{where} is the output of \texttt{<api-collection-where>} and the input of \texttt{<api-collection-get>};
 the value \texttt{count} is the output of \texttt{<api-collection-get>} and the input of \texttt{<x-pager>};
 the values \texttt{perpage} and \texttt{page} are the outputs of \texttt{<x-pager>} and the inputs of \texttt{<api-collection-get>};
-every time the user (the admin) interacts with the pagination (\texttt{<x-pager>}) or the advanced search options (\texttt{<api-collection-where>}), \texttt{<api-collection-get>} regenerates the request to get the list of models using pagination and query paramenters.
+every time the user (the admin) interacts with the pagination (\texttt{<x-pager>}) or the advanced search options (\texttt{<api-collection-where>}), \texttt{<api-collection-get>} regenerates the request to get the list of models using pagination and query parameters.
 
 \vspace{0.2cm}
 

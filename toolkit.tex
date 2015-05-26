@@ -38,8 +38,7 @@ The following elements handle HTTP RESTful API for the collections of the app.
 \texttt{<api-collection-schema>} gets the schema of a collection. 
 
 \begin{lstlisting}[language=HTML5]
-<api-collection-schema 
-  name="{collection}" 
+<api-collection-schema name="{collection}" 
   schema="{schema}" />
 \end{lstlisting}
 
@@ -75,16 +74,14 @@ Where:
 \texttt{<api-collection-where>} dynamically generates a form from a model schema, to create an API \texttt{where} clause filter. Specifically, for each property described in the model schema, it generates a corresponding input filter field. 
 
 \begin{lstlisting}[language=HTML5]
-<api-collection-where 
-  schema="{schema}"
+<api-collection-where schema="{schema}"
   where="{where}" />
 \end{lstlisting}
 
 \texttt{<api-model-get>} retrieve a model of a collection. 
 
 \begin{lstlisting}[language=HTML5]
-<api-model-get 
-  name="{name}" model-id="{id}" 
+<api-model-get name="{name}" model-id="{id}" 
   model="{model}" />
 \end{lstlisting}
 
@@ -96,8 +93,7 @@ Where:
 \texttt{<api-model-put>} update a model of a collection. 
 
 \begin{lstlisting}[language=HTML5]
-<api-model-put 
-  name="{name}" model-id="{id}" 
+<api-model-put name="{name}" model-id="{id}" 
   model="{model}" />
 \end{lstlisting}
 
@@ -120,8 +116,7 @@ The following elements are used to create forms.
 \texttt{<x-input>} is an extension of the input element. 
 
 \begin{lstlisting}[language=HTML5]
-<x-input 
-  type="{type}" label="{label}"
+<x-input type="{type}" label="{label}"
   value="{value}" />
 \end{lstlisting}
 
@@ -145,7 +140,7 @@ The following elements are used to manage lists.
 \texttt{<x-table>}  dynamically generates a table of models from a model schema. 
 
 \begin{lstlisting}[language=HTML5]
-<x-table schema="{{schema}}" items="{{items}}" />
+<x-table schema="{schema}" items="{items}" />
 \end{lstlisting}
 
 Where \texttt{schema} is used to generate the columns of the table; 
@@ -156,8 +151,7 @@ Where \texttt{schema} is used to generate the columns of the table;
 \texttt{<x-pager>} generate the list of links to handle pagination.
 
 \begin{lstlisting}[language=HTML5]
-<x-pager 
-  perpage="{perpage}" count="{count}" 
+<x-pager perpage="{perpage}" count="{count}" 
   current="{page}" />
 \end{lstlisting}
 

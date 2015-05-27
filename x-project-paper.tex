@@ -43,9 +43,29 @@
         sensitive=true, 
         alsoletter={<>=-},
         otherkeywords={
-        % HTML tags
+                % HTML tags
+        <h1>,</h1>,
+        <h2>,</h2>,
+        <h3>,</h3>,
+        <div>,</div>,
+        <a, *>, </a>,
         <html>, <head>, <title>, </title>, <meta, />, </head>, <body>,
-        <canvas, \/canvas>, <script>, </script>, </body>, </html>, <!, html>, <style>, </style>, ><
+        <canvas, \/canvas>, <script>, </script>, </body>, </html>, <!, html>, <style>, </style>, ><,
+        %Web Components
+        <x-route, \/x-route>,
+        <api-collection-schema, \/api-collection-schema>,
+        <api-collection-post, \/api-collection-post>,
+        <api-collection-get, \/api-collection-get>,
+        <api-collection-where, \/api-collection-where>,
+        <api-model-get, \/api-model-get>,
+        <api-model-put, \/api-model-put>,
+        <api-model-del, \/api-model-del>,
+        <x-input, \/x-input>,
+        <x-form,  \/x-from>,
+        <x-table, \/x-table>,
+        <x-pager, \/x-pager>,
+        <x-router>, <\/x-router>,
+        <template, *>, </template>
         },  
         ndkeywords={
         % General
@@ -53,7 +73,9 @@
         % HTML attributes
         charset=, id=, width=, height=,
         % CSS properties
-        border:, transform:, -moz-transform:, transition-duration:, transition-property:, transition-timing-function:
+        border:, transform:, -moz-transform:, transition-duration:, transition-property:, transition-timing-function:,
+        %custom
+        content
         },  
         morecomment=[s]{<!--}{-->},
         tag=[s]

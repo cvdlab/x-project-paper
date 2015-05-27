@@ -21,6 +21,7 @@
 \setlist[description]{leftmargin=*}
 
 \definecolor{editorGray}{rgb}{0.95, 0.95, 0.95}
+\definecolor{editorBlack}{rgb}{0.22, 0.22, 0.62}
 \definecolor{editorOcher}{rgb}{1, 0.5, 0} % #FF7F00 -> rgb(239, 169, 0)
 \definecolor{editorGreen}{rgb}{0, 0.5, 0} % #007C00 -> rgb(0, 124, 0)
 \colorlet{punct}{red!60!black}
@@ -73,9 +74,7 @@
         % HTML attributes
         charset=, id=, width=, height=,
         % CSS properties
-        border:, transform:, -moz-transform:, transition-duration:, transition-property:, transition-timing-function:,
-        %custom
-        content
+        border:, transform:, -moz-transform:, transition-duration:, transition-property:, transition-timing-function:
         },  
         morecomment=[s]{<!--}{-->},
         tag=[s]
@@ -94,7 +93,7 @@
     % firstnumber=1,
     % numberfirstline=true,
     % Code design   
-    keywordstyle=\color{blue}\bfseries,
+    keywordstyle=\color{editorBlack}\bfseries,
     commentstyle=\color{darkgray}\ttfamily,
     ndkeywordstyle=\color{editorGreen}\bfseries,
     stringstyle=\color{delim},
@@ -214,7 +213,7 @@ Federico Spini\\
 \begin{abstract}
 This work introduces the \brand{x-project} toolkit, a software library essentially composed by a collection of Web Components based on \href{https://www.polymer-project.org}{Polymer Project} by Google. The toolkit is then applied along with a modern web framework, namely \href{http://loopback.io/}{Loopback} by Strongloop, to realize an hybrid prototypal tool which brings together the customizability of a modern web framework with the ease of use of traditional CMSs.
 
-Furthermore, the toolkit usage implicitly defines a document-driven development process that leads to a very readable, maintainable and extensible code by imposing a neat logic decomposition that strongly supports an engineered design of the web application.
+Furthermore, the toolkit usage implicitly defines a document driven development process that leads to a very readable, maintainable and extensible code by imposing a neat logic decomposition that strongly supports an engineered design of the web application.
 \end{abstract}
 
 

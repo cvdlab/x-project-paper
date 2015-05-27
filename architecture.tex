@@ -1,10 +1,10 @@
 \section{Architecture}\label{sec:architecture}
 
-A Web application developed exploiting the \brand{x-project} toolkit, an \brand{x-project} app, is a full stack {\em JavaScript} Single Page Application.
+A Web application developed using the \brand{x-project} toolkit, an \brand{x-project} app, is a full stack {\em JavaScript} Single Page Application.
 
 \paragraph{Server side}
 
-On the server-side, an \brand{x-project} app is based on:
+On the server-side, an \brand{x-project} app is based on the following:
 
 \begin{description}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -12,13 +12,13 @@ On the server-side, an \brand{x-project} app is based on:
 These schemas are JSON documents. Each document represents a model and presents the following fields: the \texttt{name} of the model, the set of \texttt{properties}, the list of \texttt{relations} to others models and the list of \texttt{ACL} (Access Control Layer) rules. 
 The API can be extended: the developer can add remote functions to models or add hooks to existing API to add custom behavior before and/or after the API handler (to pre-process the request and/or post-process the response). 
 The resulting API is RESTful, cookie free, signed by authentication token.
-By default, applications have a built-in model that represent a user, with properties \texttt{username}, \texttt{email} and \texttt{password} for login and the property \texttt{role} used by the ACL module.
-{\em Loopback} also introduces an indirection layer that allows to choose among (almost) any particular DBMS to use.
+By default, applications have a built-in model that represents a user, with properties \texttt{username}, \texttt{email} and \texttt{password} for login and the property \texttt{role} used by the ACL module.
+{\em Loopback} also introduces an indirection layer that allows to choose from almost all particular DBMS to be used.
 \end{description}
 
 \paragraph{Client side}
 
-On the client-side, an \brand{x-project} app is based on:
+On the client-side, an \brand{x-project} app is based on the following:
 
 \begin{description}
 \itemsep1pt\parskip0pt\parsep0pt
@@ -32,7 +32,7 @@ Each of these pieces is useful individually. But when combined, this whole packa
 \emph{Composability}, being able to create whole sites and apps by putting different elements together;
 \emph{Encapsulation}, isolating markup, style, and behavior logic so they don't leak into the rest of the page;
 \emph{Reusability}, extending existing elements to create new elements, allowing to stop reinventing the wheel.
-This brings a less fragmented ecosystem, where components can truly interoperate with each other.
+This leads to a less fragmented ecosystem, where components can truly interoperate with each other.
 Since these specifications are currently W3C Working Draft, polyfills library is required \cite{webcomponents-polyfills}.
         
 \item[Polymer library] (\url{https://www.polymer-project.org/}) provides a thin layer of API on top of Web Components and several powerful features, such as custom events and delegation, mixins, accessors and component life-cycle functions, to facilitate the creation of Web Components. 

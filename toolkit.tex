@@ -2,19 +2,19 @@
 
 ``Everything is an element'', from an AJAX request to an entire web page. Every part of the website is encapsulated inside an element. 
 
-\brand{x-project} provide a set of Polymer element for local routing, API requests, forms, lists, and style, as listed below \footnote{\scriptsize For the sake of conciseness, Polymer Elements are presented as empty elements, although empty element type is not supported. Furthermore, template variable are enclosed in single curly brackets while Polymer requires double curly brackets.}. 
+\brand{x-project} provides a set of Polymer elements for local routing, API requests, forms, lists, and style, as listed below \footnote{\scriptsize For the sake of conciseness, Polymer Elements are presented as empty elements, although empty element type is not supported. Furthermore, template variable are enclosed in single curly brackets while Polymer requires double curly brackets.}. 
 
-Elements can be customized through their attributes. Attributes can acts as inputs parameters (values that have effects to the element) or output parameters (values that are returned by the element).
+Elements can be customized through their attributes. Attributes can act as inputs parameters (values having effects on the element) or output parameters (values that are returned by the element).
 Values in parameters could be hard-coded (if they never change) or stored in variables.
 Different parameters in different elements could use the same variable, so, the value of an output parameter of an element could be used as input in an input parameter of another element.
 
 \paragraph{Elements for local routing}
 
-The following elements performs local routing (for Single Page Application).
+The following elements perform local routing (for Single Page Application).
 
 \vspace{0.2cm}
 
-\texttt{<x-router>} implements local routing using \emph{HTML5 Push State API}. It represent the core element of the app. It intercepts routes, create pages, and pass parameters to the page.
+\texttt{<x-router>} implements local routing using \emph{HTML5 Push State API}. It represents the core element of the app. It intercepts routes, creates pages, and passes parameters to the page.
 
 \vspace{0.2cm}
 
@@ -44,7 +44,7 @@ The following elements handle HTTP RESTful API for the collections of the app.
 
 \vspace{0.2cm}
 
-\texttt{<api-collection-post>} create a model of a collection. 
+\texttt{<api-collection-post>} creates a model of a collection. 
 
 \begin{lstlisting}[language=HTML5]
 <api-collection-post 
@@ -78,7 +78,7 @@ Where:
   where="{where}" />
 \end{lstlisting}
 
-\texttt{<api-model-get>} retrieve a model of a collection. 
+\texttt{<api-model-get>} retrieves a model of a collection. 
 
 \begin{lstlisting}[language=HTML5]
 <api-model-get name="{name}" model-id="{id}" 
@@ -102,7 +102,7 @@ Where:
 
 \vspace{0.2cm}
 
-\texttt{<api-model-del>} delete a model of a collection. 
+\texttt{<api-model-del>} deletes a model of a collection. 
 
 \begin{lstlisting}[language=HTML5]
 <api-model-del name="{name}" model-id="{id}" />
@@ -148,7 +148,7 @@ Where \texttt{schema} is used to generate the columns of the table;
 
 \vspace{0.2cm}
 
-\texttt{<x-pager>} generate the list of links to handle pagination.
+\texttt{<x-pager>} generates the list of links to handle pagination.
 
 \begin{lstlisting}[language=HTML5]
 <x-pager perpage="{perpage}" count="{count}" 

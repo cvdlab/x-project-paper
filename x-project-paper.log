@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.14)  27 MAY 2015 08:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.14)  27 MAY 2015 14:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -660,46 +660,42 @@ Overfull \hbox (1.14153pt too wide) in paragraph at lines 13--14
 
  []
 
-
+) (./architecture.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]) (./architecture.tex
-Overfull \hbox (9.41234pt too wide) in paragraph at lines 11--17
-[]\T1/aer/m/n/9 generates model API from the mod-
- []
-
-
-Overfull \hbox (4.35979pt too wide) in paragraph at lines 38--41
-[]\T1/aer/m/n/9 ([]$https : / / www . polymer-[]project . org/$[]) pro-
+]
+Overfull \hbox (2.76122pt too wide) in paragraph at lines 9--15
+[]\T1/aer/bx/n/9 LoopBack \T1/aer/m/n/9 gen-er-ates model API from the mod-els 
+schemas,
  []
 
 ) (./toolkit.tex
 
 LaTeX Font Warning: Font shape `T1/aett/bx/n' undefined
-(Font)              using `T1/aett/m/n' instead on input line 25.
+(Font)              using `T1/aett/m/n' instead on input line 27.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.76 \begin{lstlisting}[language=HTML5]
-                                        [2]
-Overfull \hbox (1.06058pt too wide) in paragraph at lines 123--125
+l.92   model="
+              {model}" /> [2]
+Overfull \hbox (1.06058pt too wide) in paragraph at lines 132--134
 \T1/aett/m/n/9 lo-ca-tion \T1/aer/m/n/9 (with auto-completion based on Google P
 lace API)
  []
 
 
-Overfull \hbox (12.22093pt too wide) in paragraph at lines 128--129
+Overfull \hbox (12.22093pt too wide) in paragraph at lines 137--138
 []\T1/aett/m/n/9 <x-form> \T1/aer/m/n/9 dy-nam-i-cally gen-er-ates a form from 
 a model schema,
  []
 
 
-Overfull \hbox (1.18645pt too wide) in paragraph at lines 170--171
+Overfull \hbox (1.18645pt too wide) in paragraph at lines 179--180
 []\T1/aer/m/n/9 Even a page can be en-cap-su-lated in an el-e-ment. \T1/aett/m/
 n/9 x-project
  []
@@ -708,9 +704,8 @@ n/9 x-project
  same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.42 I
-      n this simple example, there is no need to define further components b...
-[3]
+l.47 
+      [3]
 Overfull \hbox (10.56485pt too wide) in paragraph at lines 48--50
 []\T1/aer/m/n/9 Tha ad-min part is com-posed by two pages: \T1/aett/m/n/9 page-
 collection
@@ -734,7 +729,13 @@ Overfull \hbox (3.03159pt too wide) in paragraph at lines 144--147
 put of \T1/aett/m/n/9 <api-collection-
  []
 
-) (./x-project-paper.bbl)
+)
+Overfull \hbox (2.73207pt too wide) in paragraph at lines 168--247
+\T1/aer/m/n/9 defin-ing new mod-els, gen-er-at-ing cor-re-spond-ing API, defini
+nig
+ []
+
+(./x-project-paper.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 254.
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
 een already used, duplicate ignored
@@ -755,13 +756,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 254.
  ) 
 Here is how much of TeX's memory you used:
- 11360 strings out of 495028
- 163309 string characters out of 6181497
- 408724 words of memory out of 5000000
- 14193 multiletter control sequences out of 15000+600000
+ 11356 strings out of 495028
+ 163243 string characters out of 6181497
+ 407724 words of memory out of 5000000
+ 14189 multiletter control sequences out of 15000+600000
  68447 words of font info for 99 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,11n,97p,772b,1474s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,11n,97p,772b,1969s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </root/.texmf-var
 /fonts/pk/ljfour/jknappen/ec/tcrm0900.600pk></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texlive/texmf-dist/fonts/type1
@@ -777,7 +778,7 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texlive/texmf-dist
 /urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on x-project-paper.pdf (4 pages, 212053 bytes).
+Output written on x-project-paper.pdf (4 pages, 212322 bytes).
 PDF statistics:
  304 PDF objects out of 1000 (max. 8388607)
  279 compressed objects within 3 object streams

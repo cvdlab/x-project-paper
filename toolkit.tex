@@ -2,9 +2,11 @@
 
 ``Everything is an element'', from an AJAX request to an entire web page. Every part of the website is encapsulated inside an element. 
 
-\brand{x-project} provides a set of Polymer elements for local routing, API requests, forms, lists, and style, as listed below \footnote{\scriptsize For the sake of conciseness, Polymer Elements are presented as empty elements, although empty element type is not supported. Furthermore, template variable are enclosed in single curly brackets while Polymer requires double curly brackets.}. 
+\brand{x-project} provides a set of Polymer elements for local routing, API requests, forms, lists, style and admin pages, as listed below \footnote{\scriptsize For the sake of conciseness, Polymer Elements are presented as empty elements, although empty element type is not supported. Furthermore, template variable are enclosed in single curly brackets while Polymer requires double curly brackets.}. 
 
-Elements can be customized through their attributes. Attributes can act as inputs parameters (values having effects on the element) or output parameters (values that are returned by the element).
+Elements can be customized through their attributes. 
+
+Attributes can act as inputs parameters (values having effects on the element) or output parameters (values that are returned by the element).
 Values in parameters could be hard-coded (if they never change) or stored in variables.
 Different parameters in different elements could use the same variable, so, the value of an output parameter of an element could be used as input in an input parameter of another element.
 
@@ -78,6 +80,11 @@ Where:
   where="{where}" />
 \end{lstlisting}
 
+Where: \texttt{schema} is the schema of the collection (it acts as an input);
+\texttt{where} is the filter object.
+
+\vspace{0.2cm}
+
 \texttt{<api-model-get>} retrieves a model of a collection. 
 
 \begin{lstlisting}[language=HTML5]
@@ -89,6 +96,8 @@ Where:
 \texttt{name} is the name of the collection of the model; 
 \texttt{model-id} is the model id; 
 \texttt{model} is the model retrieved (it acts as an output).
+
+\vspace{0.2cm}
 
 \texttt{<api-model-put>} update a model of a collection. 
 
@@ -144,7 +153,7 @@ The following elements are used to manage lists.
 \end{lstlisting}
 
 Where \texttt{schema} is used to generate the columns of the table; 
-\texttt{collection} is used to generate the rows (the values) of the table.
+\texttt{items} is used to generate the rows (the values) of the table.
 
 \vspace{0.2cm}
 
